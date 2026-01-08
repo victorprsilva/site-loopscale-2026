@@ -36,7 +36,7 @@ export default function HomeSection6() {
         <FadeIn delay={0.2} className="relative mb-8 md:mb-12 px-4">
           <div className="flex items-center justify-center gap-4 md:gap-6">
             <div 
-              className="hidden md:block w-[200px] lg:w-[384px] h-[300px] md:h-[450px] lg:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
+              className="hidden md:block w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
               onClick={() => handlePlayVideo(0)}
             >
               {activeVideo === 0 ? (
@@ -64,7 +64,7 @@ export default function HomeSection6() {
               )}
             </div>
 
-            <div className="relative w-full md:w-[55%] lg:w-[1085px] h-[300px] md:h-[450px] lg:h-[614px] rounded-lg overflow-hidden">
+            <div className="relative w-full md:w-[55%] lg:w-[60%] xl:w-[1085px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden">
               {activeVideo === 1 ? (
                 <iframe
                   className="w-full h-full"
@@ -94,7 +94,7 @@ export default function HomeSection6() {
             </div>
 
             <div 
-              className="hidden md:block w-[200px] lg:w-[384px] h-[300px] md:h-[450px] lg:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
+              className="hidden md:block w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
               onClick={() => handlePlayVideo(2)}
             >
               {activeVideo === 2 ? (

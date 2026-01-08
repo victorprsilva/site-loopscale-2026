@@ -12,12 +12,12 @@ export default function Header() {
 
   return (
     <header className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
-      <nav className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-[131px] h-[72px] lg:h-[92px] flex items-center justify-between">
+      <nav className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[131px] h-[72px] lg:h-[92px] flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Loop Scale" className="h-[45px] lg:h-[61px] w-auto" />
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-12 xl:gap-[95px] text-[12px] font-montserrat uppercase tracking-[-0.36px]">
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-10 2xl:gap-[95px] text-[12px] font-montserrat uppercase tracking-[-0.36px]">
           <li>
             <Link to="/sobre" className={`transition-colors ${isActive('/sobre') || isActive('/') ? 'text-loopscale-blue' : 'text-black hover:text-loopscale-blue'}`}>
               SOBRE

@@ -13,7 +13,7 @@ export default function AtendimentoTreinamento() {
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[104px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[104px]">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
           <div className="flex-1 max-w-[900px]">
             <FadeIn>

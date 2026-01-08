@@ -5,7 +5,7 @@ import logoBranco from '../img/logo_branco.svg'
 export default function Footer() {
   return (
     <footer className="w-full bg-black py-10 md:py-12">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[197px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[197px]">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 mb-10 md:mb-12 items-center lg:items-start text-center lg:text-left">
           <div className="flex-shrink-0">
             <img src={logoBranco} alt="Loop Scale" className="h-[80px] md:h-[100px] lg:h-[116px] w-auto" />

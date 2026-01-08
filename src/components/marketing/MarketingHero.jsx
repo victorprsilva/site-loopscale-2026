@@ -21,8 +21,8 @@ export default function MarketingHero() {
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[212px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 xl:gap-32">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-12 xl:gap-20 xl:gap-32">
           <div className="flex-1 max-w-[837px]">
             <FadeIn delay={0.1}>
               <p className="text-loopscale-blue text-[12px] md:text-[14px] font-montserrat mb-6 md:mb-8 tracking-wide uppercase">

@@ -21,7 +21,7 @@ export default function AboutMission() {
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[216px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[216px]">
         <FadeIn>
           <h2 className="text-black text-[24px] md:text-[28px] lg:text-[35px] font-inter font-bold leading-tight tracking-[-0.72px] md:tracking-[-1.05px] mb-10 md:mb-16 lg:mb-20">
             E você provavelmente<br />já sentiu isso na pele:

@@ -32,7 +32,7 @@ export default function VendasPratica() {
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[212px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8 mb-12 md:mb-16">
           <FadeIn>
             <h2 className="text-black text-[28px] md:text-[36px] lg:text-[48px] font-inter font-normal leading-tight tracking-[-0.84px] md:tracking-[-1.44px] max-w-[400px]">

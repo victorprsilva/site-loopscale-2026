@@ -15,7 +15,7 @@ export default function AulasHero() {
 
   return (
     <section className="w-full bg-black pt-[120px] md:pt-[140px] pb-12 md:pb-16 lg:pb-20">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
         <FadeIn className="text-center mb-8 md:mb-12">
           <div className="flex justify-center mb-4">
             <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[141px] lg:h-[141px] rounded-full overflow-hidden bg-white">
@@ -38,7 +38,7 @@ export default function AulasHero() {
         </FadeIn>
 
         <FadeIn delay={0.2} className="flex justify-center">
-          <div className="relative w-full max-w-[1059px] h-[300px] md:h-[450px] lg:h-[588px] rounded-lg overflow-hidden">
+          <div className="relative w-full max-w-[900px] xl:max-w-[1059px] h-[300px] md:h-[400px] lg:h-[480px] xl:h-[588px] rounded-lg overflow-hidden">
             {isPlaying ? (
               <iframe
                 className="w-full h-full"

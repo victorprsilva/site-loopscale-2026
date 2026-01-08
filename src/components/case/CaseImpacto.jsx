@@ -11,7 +11,7 @@ export default function CaseImpacto() {
 
   return (
     <section className="w-full bg-white py-16 md:py-20 lg:py-[120px]">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[198px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[198px]">
         <FadeIn>
           <h2 className="text-black text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold italic leading-[1.1] tracking-[-0.84px] mb-16 md:mb-[197px] max-w-[366px]">
             Impacto que sua empresa pode sentir.

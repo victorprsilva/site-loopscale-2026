@@ -5,7 +5,7 @@ const womanImage = "https://www.figma.com/api/mcp/asset/c96607c5-5b09-41d1-a4d6-
 export default function MarketingEstrutura() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[212px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
           <div className="flex-1 max-w-[756px]">
             <FadeIn>

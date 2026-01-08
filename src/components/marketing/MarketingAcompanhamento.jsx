@@ -16,7 +16,7 @@ export default function MarketingAcompanhamento() {
 
   return (
     <section className="w-full bg-black py-12 md:py-16 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[200px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[200px]">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12 md:mb-16">
           <div className="max-w-[502px]">
             <FadeIn>

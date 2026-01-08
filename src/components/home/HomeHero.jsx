@@ -30,8 +30,8 @@ export default function HomeHero() {
 
   return (
     <section className="w-full bg-black pt-[120px] md:pt-[140px] pb-12 md:pb-16 lg:pb-20">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 mb-16 md:mb-20 lg:mb-24">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 mb-16 md:mb-20 lg:mb-24">
           <div className="flex-1 max-w-[550px]">
             <FadeIn>
               <h1 className="text-white text-[48px] md:text-[64px] lg:text-[80px] font-montserrat font-black italic leading-[1] tracking-[-2px] md:tracking-[-3px] mb-8">
@@ -73,32 +73,32 @@ export default function HomeHero() {
           <FadeIn delay={0.2} direction="left" className="flex-1">
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div className="col-span-1 row-span-1">
-                <div className="w-full h-[200px] md:h-[280px] lg:h-[431px] rounded-lg overflow-hidden">
+                <div className="w-full h-[200px] md:h-[280px] lg:h-[300px] xl:h-[431px] rounded-lg overflow-hidden">
                   <img src={heroImage1} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
-                <div className="w-full h-[200px] md:h-[280px] lg:h-[418px] rounded-lg overflow-hidden">
+                <div className="w-full h-[200px] md:h-[280px] lg:h-[290px] xl:h-[418px] rounded-lg overflow-hidden">
                   <img src={heroImage2} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
-                <div className="w-full h-[180px] md:h-[240px] lg:h-[364px] rounded-lg overflow-hidden">
+                <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[364px] rounded-lg overflow-hidden">
                   <img src={heroImage3} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
-                <div className="w-full h-[180px] md:h-[240px] lg:h-[361px] rounded-lg overflow-hidden">
+                <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[361px] rounded-lg overflow-hidden">
                   <img src={heroImage4} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
-                <div className="w-full h-[180px] md:h-[240px] lg:h-[361px] rounded-lg overflow-hidden">
+                <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[361px] rounded-lg overflow-hidden">
                   <img src={heroImage6} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
-                <div className="w-full h-[180px] md:h-[240px] lg:h-[361px] rounded-lg overflow-hidden">
+                <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[361px] rounded-lg overflow-hidden">
                   <img src={heroImage5} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>

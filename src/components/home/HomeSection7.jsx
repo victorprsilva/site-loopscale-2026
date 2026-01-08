@@ -24,7 +24,7 @@ export default function HomeSection7() {
 
   return (
     <section className="w-full bg-[#E8E8E8] py-16 md:py-20 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[201px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
         <FadeIn className="mb-12 md:mb-16">
           <h2 className="text-black text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold italic leading-tight max-w-[400px]">
             Impacto que sua empresa pode sentir.
@@ -44,7 +44,7 @@ export default function HomeSection7() {
           ))}
         </FadeInStagger>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-start lg:items-end">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 items-start lg:items-end">
           <FadeIn className="flex-1 max-w-[700px]">
             <p className="text-black text-[24px] md:text-[32px] lg:text-[40px] font-inter font-bold leading-tight">
               <span className="text-loopscale-blue">Esses números</span> não são promessas.<br />

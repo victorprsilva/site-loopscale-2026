@@ -33,8 +33,8 @@ export default function HomeSection2() {
 
   return (
     <section className="w-full bg-white py-16 md:py-20 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-16 md:mb-20">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mb-16 md:mb-20">
           <FadeIn className="flex-1 max-w-[453px]">
             <h2 className="text-black text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold leading-tight tracking-[-0.84px]">
               Não somos prestadores de serviço. Somos o parceiro que entra no jogo com você.
@@ -95,7 +95,7 @@ export default function HomeSection2() {
           ))}
         </FadeInStagger>
 
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 mb-16 md:mb-20">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mb-16 md:mb-20">
           <FadeIn className="flex-1 max-w-[700px]">
             <p className="text-black text-[24px] md:text-[32px] lg:text-[40px] font-inter font-bold italic leading-tight">
               Essa não é uma promessa teórica. É uma metodologia criada, testada e refinada ao longo de mais de uma década, com empresas de diferentes portes, setores e estágios de maturidade. Você não precisa de mais um fornecedor de mídia, landing page ou relatório.

@@ -18,7 +18,7 @@ export default function MarketingDiferencial() {
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[212px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           <div className="flex-1">
             <div className="flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-32 mb-12 md:mb-16 lg:mb-20">

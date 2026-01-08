@@ -3,7 +3,7 @@ import { FadeIn } from './animations/FadeIn'
 export default function AboutHero() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">
-      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-24 xl:px-[212px]">
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
         <FadeIn delay={0.1}>
           <p className="text-loopscale-blue text-[12px] md:text-[14px] font-montserrat mb-8 md:mb-12 tracking-wide uppercase">
             Sobre nós
