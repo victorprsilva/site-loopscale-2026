@@ -1,55 +1,64 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
-import logo from '../img/logo.svg'
+import logoWhite from '../../img/logo_branco.svg'
 
-export default function Header() {
+export default function HeaderCase() {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
 
   const isActive = (path) => location.pathname === path
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header className="w-full sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50">
+    <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md' : 'bg-transparent'}`}>
       <nav className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-[131px] h-[72px] lg:h-[92px] flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Loop Scale" className="h-[45px] lg:h-[61px] w-auto" />
+          <img src={logoWhite} alt="Loop Scale" className="h-[45px] lg:h-[61px] w-auto" />
         </Link>
 
         <ul className="hidden lg:flex items-center gap-12 xl:gap-[95px] text-[12px] font-montserrat uppercase tracking-[-0.36px]">
           <li>
-            <Link to="/sobre" className={`transition-colors ${isActive('/sobre') || isActive('/') ? 'text-loopscale-blue' : 'text-black hover:text-loopscale-blue'}`}>
+            <Link to="/sobre" className="text-white hover:text-loopscale-blue transition-colors">
               SOBRE
             </Link>
           </li>
           
           <li className="relative">
             <button 
-              className="flex items-center gap-[7px] text-loopscale-blue hover:opacity-80 transition-opacity uppercase"
+              className="flex items-center gap-[7px] text-white hover:text-loopscale-blue transition-colors uppercase"
               onMouseEnter={() => setActiveDropdown('servico')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               SERVIÇO
-              <ChevronDown size={15} className="text-loopscale-blue" />
+              <ChevronDown size={15} className="text-white" />
             </button>
           </li>
 
           <li>
-            <a href="#cases" className="text-black hover:text-loopscale-blue transition-colors">
+            <Link to="/case" className="text-loopscale-blue transition-colors">
               CASES
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a href="#blog" className="text-black hover:text-loopscale-blue transition-colors">
+            <a href="#blog" className="text-white hover:text-loopscale-blue transition-colors">
               BLOG
             </a>
           </li>
 
           <li className="relative">
             <button 
-              className="flex items-center gap-[7px] text-black hover:text-loopscale-blue transition-colors uppercase"
+              className="flex items-center gap-[7px] text-white hover:text-loopscale-blue transition-colors uppercase"
               onMouseEnter={() => setActiveDropdown('conteudo')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
@@ -74,7 +83,7 @@ export default function Header() {
         </Link>
 
         <button 
-          className="lg:hidden p-2 text-black"
+          className="lg:hidden p-2 text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Menu"
         >
@@ -83,12 +92,12 @@ export default function Header() {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
+        <div className="lg:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 absolute w-full left-0">
           <ul className="flex flex-col py-4 px-6 text-[14px] font-montserrat uppercase tracking-[-0.36px]">
             <li>
               <Link 
                 to="/sobre" 
-                className={`block py-3 transition-colors border-b border-gray-100 ${isActive('/sobre') || isActive('/') ? 'text-loopscale-blue' : 'text-black hover:text-loopscale-blue'}`}
+                className="block py-3 text-white hover:text-loopscale-blue transition-colors border-b border-gray-800"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 SOBRE
@@ -96,26 +105,26 @@ export default function Header() {
             </li>
             
             <li>
-              <button className="flex items-center justify-between w-full py-3 text-loopscale-blue border-b border-gray-100">
+              <button className="flex items-center justify-between w-full py-3 text-white border-b border-gray-800">
                 SERVIÇO
-                <ChevronDown size={15} className="text-loopscale-blue" />
+                <ChevronDown size={15} />
               </button>
             </li>
 
             <li>
-              <a 
-                href="#cases" 
-                className="block py-3 text-black hover:text-loopscale-blue transition-colors border-b border-gray-100"
+              <Link 
+                to="/case" 
+                className="block py-3 text-loopscale-blue transition-colors border-b border-gray-800"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 CASES
-              </a>
+              </Link>
             </li>
 
             <li>
               <a 
                 href="#blog" 
-                className="block py-3 text-black hover:text-loopscale-blue transition-colors border-b border-gray-100"
+                className="block py-3 text-white hover:text-loopscale-blue transition-colors border-b border-gray-800"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 BLOG
@@ -123,7 +132,7 @@ export default function Header() {
             </li>
 
             <li>
-              <button className="flex items-center justify-between w-full py-3 text-black border-b border-gray-100">
+              <button className="flex items-center justify-between w-full py-3 text-white border-b border-gray-800">
                 CONTEÚDO
                 <ChevronDown size={15} />
               </button>

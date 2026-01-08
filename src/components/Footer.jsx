@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Facebook, Instagram, Youtube, Linkedin } from 'lucide-react'
 import logoBranco from '../img/logo_branco.svg'
 
@@ -11,18 +12,18 @@ export default function Footer() {
           </div>
 
           <nav className="flex flex-wrap justify-center lg:justify-start gap-6 md:gap-10 lg:gap-[60px]">
-            <a 
-              href="#sobre" 
+            <Link 
+              to="/sobre" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"
             >
               SOBRE
-            </a>
-            <a 
-              href="#servico" 
+            </Link>
+            <Link 
+              to="/marketing" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"
             >
               SERVIÇO
-            </a>
+            </Link>
             <a 
               href="#depoimentos" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"

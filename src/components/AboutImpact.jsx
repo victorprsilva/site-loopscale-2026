@@ -55,10 +55,16 @@ export default function AboutImpact() {
 
             <a 
               href="#contato" 
-              className="bg-loopscale-blue text-white px-5 py-3 md:px-[23px] md:py-[14px] h-auto md:h-[48px] flex items-center justify-center gap-[10px] hover:bg-loopscale-blue-dark transition-colors font-inter text-[13px] md:text-[14px] tracking-[0.84px] w-full lg:w-auto flex-shrink-0"
+              className="relative overflow-hidden bg-loopscale-blue text-white px-5 py-3 md:px-[23px] md:py-[14px] h-auto md:h-[48px] flex items-center justify-center gap-[10px] font-inter text-[13px] md:text-[14px] tracking-[0.84px] w-full lg:w-auto flex-shrink-0 group"
             >
-              Quero aprender como aplicar na minha empresa
-              <ChevronRight size={16} />
+              <span 
+                className="absolute inset-0 bg-loopscale-blue-dark transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
+                aria-hidden="true"
+              />
+              <span className="relative z-10 flex items-center gap-[10px]">
+                Quero aprender como aplicar na minha empresa
+                <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
             </a>
           </div>
         </FadeIn>
