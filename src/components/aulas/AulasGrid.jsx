@@ -2,39 +2,39 @@ import { FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
 
 const videos = [
   { 
-    id: "MLpWrANjFbI", 
+    id: "5X7P_kUUc2M", 
     title: "Como Usar o Tráfego Pago para Alavancar as Vendas da sua Empresa!" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "oMZyt0YtkmY", 
     title: "Como uma Empresa Economizou 703 mil em Anúncios e Gerou 2 milhões em Faturamento." 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "9TmVfOwkfmE", 
     title: "Conteúdo que Vira Receita: pare de postar por postar e comece a vender com estratégia!" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "VV4Cu3HPvzM", 
     title: "Diagnóstico Consultivo: como vender com autoridade (e parar de parecer desesperado)!" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "eqq2q91sUIU", 
     title: "Descubra porque sua empresa não cresce mesmo investindo cada vez mais em Marketing" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "9-1IO-YYM4k", 
     title: "Como Estruturar Seu Funil de Vendas para Gerar mais Conversões em Vendas" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "x4Hok3YdRtk", 
     title: "Marketing que Vende: como transformar conteúdo em receita (sem depender de sorte)!" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "I4XpKNsb3zQ", 
     title: "Reunião Magnética- Alcance resultados reais de vendas!" 
   },
   { 
-    id: "MLpWrANjFbI", 
+    id: "4Y8JqHGcHrA", 
     title: "Síndrome do Mês Zero: por que sua empresa começa todo mês do zero (e como sair disso)." 
   }
 ]
@@ -57,7 +57,7 @@ export default function AulasGrid() {
                 />
               </div>
               <p className="text-black text-[14px] md:text-[15px] font-inter leading-[1.5]">
-                {video.title}
+               
               </p>
             </FadeInStaggerItem>
           ))}

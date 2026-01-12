@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-
-const rocketImage = "https://www.figma.com/api/mcp/asset/8561e78e-bf4d-413b-8778-b9cd4d35deea"
+import rocketImage from '../../img/marketing/rocket.jpg'
 
 export default function MarketingDiferencial() {
   const cards = [

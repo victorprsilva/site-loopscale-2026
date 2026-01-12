@@ -1,13 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import logoWhite from '../../img/logo_branco.svg'
+import submenuImage from '../../img/menu.png'
+
+const servicos = [
+  { name: 'Marketing', path: '/marketing' },
+  { name: 'Vendas', path: '/vendas' },
+  { name: 'Atendimento', path: '/atendimento' },
+  { name: 'Análise', path: '/analise' }
+]
 
 export default function HeaderCase() {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const location = useLocation()
+  const dropdownRef = useRef(null)
+  const conteudoRef = useRef(null)
+
+  const conteudos = [
+    { name: 'Ebooks', path: '/ebooks' },
+    { name: 'Aulas', path: '/aulas' }
+  ]
 
   const isActive = (path) => location.pathname === path
 
@@ -18,6 +33,20 @@ export default function HeaderCase() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const isOutsideServico = dropdownRef.current && !dropdownRef.current.contains(event.target)
+      const isOutsideConteudo = conteudoRef.current && !conteudoRef.current.contains(event.target)
+      if ((activeDropdown === 'servico' && isOutsideServico) || (activeDropdown === 'conteudo' && isOutsideConteudo)) {
+        setActiveDropdown(null)
+      }
+    }
+    if (activeDropdown === 'servico' || activeDropdown === 'conteudo') {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [activeDropdown])
 
   return (
     <header className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-md' : 'bg-transparent'}`}>
@@ -33,15 +62,45 @@ export default function HeaderCase() {
             </Link>
           </li>
           
-          <li className="relative">
+          <li className="relative" ref={dropdownRef}>
             <button 
               className="flex items-center gap-[7px] text-white hover:text-loopscale-blue transition-colors uppercase"
-              onMouseEnter={() => setActiveDropdown('servico')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onClick={() => setActiveDropdown(activeDropdown === 'servico' ? null : 'servico')}
             >
               SERVIÇO
-              <ChevronDown size={15} className="text-white" />
+              <ChevronDown size={15} className={`text-white transition-transform duration-300 ${activeDropdown === 'servico' ? 'rotate-180' : ''}`} />
             </button>
+            
+            {/* Submenu Serviços - Desktop */}
+            {activeDropdown === 'servico' && (
+              <div className="absolute top-full left-0 mt-4 w-[700px] xl:w-[900px] bg-white border border-gray-200 shadow-xl rounded-lg z-50">
+                <div className="p-8 flex justify-between gap-8">
+                  <div className="flex flex-col gap-4">
+                    {servicos.map((servico, index) => (
+                      <Link
+                        key={index}
+                        to={servico.path}
+                        className={`text-[20px] font-inter transition-colors ${
+                          location.pathname === servico.path 
+                            ? 'text-loopscale-blue font-medium' 
+                            : 'text-black hover:text-loopscale-blue'
+                        }`}
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        {servico.name}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="hidden xl:block w-[299px] h-[220px] rounded-lg overflow-hidden flex-shrink-0">
+                    <img 
+                      src={submenuImage} 
+                      alt="" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </li>
 
           <li>
@@ -56,15 +115,36 @@ export default function HeaderCase() {
             </a>
           </li>
 
-          <li className="relative">
+          <li className="relative" ref={conteudoRef}>
             <button 
               className="flex items-center gap-[7px] text-white hover:text-loopscale-blue transition-colors uppercase"
-              onMouseEnter={() => setActiveDropdown('conteudo')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onClick={() => setActiveDropdown(activeDropdown === 'conteudo' ? null : 'conteudo')}
             >
               CONTEÚDO
-              <ChevronDown size={15} />
+              <ChevronDown size={15} className={`transition-transform duration-300 ${activeDropdown === 'conteudo' ? 'rotate-180' : ''}`} />
             </button>
+            
+            {/* Submenu Conteúdo - Desktop */}
+            {activeDropdown === 'conteudo' && (
+              <div className="absolute top-full left-0 mt-4 w-[200px] bg-white border border-gray-200 shadow-xl rounded-lg z-50">
+                <div className="p-4 flex flex-col gap-2">
+                  {conteudos.map((conteudo, index) => (
+                    <Link
+                      key={index}
+                      to={conteudo.path}
+                      className={`text-[16px] font-inter transition-colors py-2 ${
+                        location.pathname === conteudo.path 
+                          ? 'text-loopscale-blue font-medium' 
+                          : 'text-black hover:text-loopscale-blue'
+                      }`}
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      {conteudo.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </li>
         </ul>
 
@@ -105,10 +185,31 @@ export default function HeaderCase() {
             </li>
             
             <li>
-              <button className="flex items-center justify-between w-full py-3 text-white border-b border-gray-800">
+              <button 
+                className="flex items-center justify-between w-full py-3 text-white border-b border-gray-800"
+                onClick={() => setActiveDropdown(activeDropdown === 'servico-mobile' ? null : 'servico-mobile')}
+              >
                 SERVIÇO
-                <ChevronDown size={15} />
+                <ChevronDown size={15} className={`transition-transform ${activeDropdown === 'servico-mobile' ? 'rotate-180' : ''}`} />
               </button>
+              {activeDropdown === 'servico-mobile' && (
+                <div className="pl-4 pb-2 border-b border-gray-800">
+                  {servicos.map((servico, index) => (
+                    <Link
+                      key={index}
+                      to={servico.path}
+                      className={`block py-2 text-[14px] font-inter normal-case ${
+                        location.pathname === servico.path 
+                          ? 'text-loopscale-blue' 
+                          : 'text-gray-400 hover:text-loopscale-blue'
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {servico.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
 
             <li>
@@ -132,10 +233,31 @@ export default function HeaderCase() {
             </li>
 
             <li>
-              <button className="flex items-center justify-between w-full py-3 text-white border-b border-gray-800">
+              <button 
+                className="flex items-center justify-between w-full py-3 text-white border-b border-gray-800"
+                onClick={() => setActiveDropdown(activeDropdown === 'conteudo-mobile' ? null : 'conteudo-mobile')}
+              >
                 CONTEÚDO
-                <ChevronDown size={15} />
+                <ChevronDown size={15} className={`transition-transform ${activeDropdown === 'conteudo-mobile' ? 'rotate-180' : ''}`} />
               </button>
+              {activeDropdown === 'conteudo-mobile' && (
+                <div className="pl-4 pb-2 border-b border-gray-800">
+                  {conteudos.map((conteudo, index) => (
+                    <Link
+                      key={index}
+                      to={conteudo.path}
+                      className={`block py-2 text-[14px] font-inter normal-case ${
+                        location.pathname === conteudo.path 
+                          ? 'text-loopscale-blue' 
+                          : 'text-gray-400 hover:text-loopscale-blue'
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {conteudo.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
 
             <li className="pt-4">

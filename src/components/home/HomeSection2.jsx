@@ -1,10 +1,9 @@
 import { ChevronRight, CheckCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-
-const cardImage1 = "https://www.figma.com/api/mcp/asset/ecc79433-1e5f-4bad-9fb5-59f2e30c56ca"
-const cardImage2 = "https://www.figma.com/api/mcp/asset/8c1529bc-d380-4ba8-b05e-1d7a6cb2f12b"
-const cardImage3 = "https://www.figma.com/api/mcp/asset/dc33892a-6748-4e57-9796-575811306ec5"
+import cardImage1 from '../../img/home/section2-card-1.jpg'
+import cardImage2 from '../../img/home/section2-card-2.jpg'
+import cardImage3 from '../../img/home/section2-card-3.jpg'
 
 export default function HomeSection2() {
   const focusCards = [

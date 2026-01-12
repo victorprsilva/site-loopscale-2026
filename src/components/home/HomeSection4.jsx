@@ -1,8 +1,7 @@
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-
-const cardImage1 = "https://www.figma.com/api/mcp/asset/65309223-1e5f-4f29-ba22-8113565a3003"
-const cardImage2 = "https://www.figma.com/api/mcp/asset/9a1cc112-1695-40ad-803e-82d6bf6bb239"
-const cardImage3 = "https://www.figma.com/api/mcp/asset/a7d62979-263a-4fd9-bdca-eaeeda65b116"
+import cardImage1 from '../../img/home/section4-card-1.jpg'
+import cardImage2 from '../../img/home/section4-card-2.jpg'
+import cardImage3 from '../../img/home/section4-card-3.jpg'
 
 export default function HomeSection4() {
   const cards = [

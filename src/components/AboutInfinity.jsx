@@ -1,6 +1,5 @@
 import { ScaleIn } from './animations/FadeIn'
-
-const imgInfinity = "https://www.figma.com/api/mcp/asset/6f3a048d-96a6-43d5-9b40-c82e2d462247"
+import imgInfinity from '../img/about/infinity.png'
 
 export default function AboutInfinity() {
   return (

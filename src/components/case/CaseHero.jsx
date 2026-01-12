@@ -3,13 +3,12 @@ import { Play } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
 import thumbImage from '../../img/thumb.png'
-
-const logoComCristo = "https://www.figma.com/api/mcp/asset/14f20135-6700-4e5d-b02f-8360219dc190"
-const logoKings = "https://www.figma.com/api/mcp/asset/e09ce8a7-ff08-42f6-bd20-02b71cbe5d50"
-const logoYamaha = "https://www.figma.com/api/mcp/asset/64c4124a-207f-495e-911b-542d546ff3ef"
-const logoNacionalInn = "https://www.figma.com/api/mcp/asset/6b96f512-2498-458a-9331-882450ce9ced"
-const logoAddebitare = "https://www.figma.com/api/mcp/asset/7408583a-fe30-450c-8f11-0193cdc28b5d"
-const logoShineray = "https://www.figma.com/api/mcp/asset/82b70dbf-b1a3-4ffa-bf3b-299f81a32eb9"
+import logoComCristo from '../../img/case/logo-comcristo.png'
+import logoKings from '../../img/case/logo-kings.png'
+import logoYamaha from '../../img/case/logo-yamaha.png'
+import logoNacionalInn from '../../img/case/logo-nacionalinn.png'
+import logoAddebitare from '../../img/case/logo-addebitare.png'
+import logoShineray from '../../img/case/logo-shineray.png'
 
 export default function CaseHero() {
   const [activeVideo, setActiveVideo] = useState(null)

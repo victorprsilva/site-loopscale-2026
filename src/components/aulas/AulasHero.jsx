@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { Play } from 'lucide-react'
 import { FadeIn } from '../animations/FadeIn'
-import thumbImage from '../../img/thumb.png'
-
-const channelLogo = "https://www.figma.com/api/mcp/asset/e9b44310-ab31-46ed-a870-8cc241a14df8"
+import channelLogo from '../../img/aulas/channel-logo.jpg'
 
 export default function AulasHero() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const youtubeVideoId = "MLpWrANjFbI"
+  
+  const featuredVideoId = "X6m_pr0lXKs"
 
   const handlePlayVideo = () => {
     setIsPlaying(true)
@@ -18,11 +17,11 @@ export default function AulasHero() {
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
         <FadeIn className="text-center mb-8 md:mb-12">
           <div className="flex justify-center mb-4">
-            <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[141px] lg:h-[141px] rounded-full overflow-hidden bg-white">
+            <div className="w-[100px] h-[100px] md:w-[120px] md:h-[120px] lg:w-[141px] lg:h-[141px] rounded-full overflow-hidden bg-white flex items-center justify-center">
               <img 
                 src={channelLogo}
                 alt="Loop Scale"
-                className="w-full h-full object-cover"
+                className="w-[79px] h-[60px] object-contain"
               />
             </div>
           </div>
@@ -42,7 +41,7 @@ export default function AulasHero() {
             {isPlaying ? (
               <iframe
                 className="w-full h-full"
-                src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1`}
+                src={`https://www.youtube.com/embed/${featuredVideoId}?autoplay=1`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -51,7 +50,7 @@ export default function AulasHero() {
             ) : (
               <>
                 <img 
-                  src={thumbImage}
+                  src={`https://img.youtube.com/vi/${featuredVideoId}/maxresdefault.jpg`}
                   alt="Aula Loop Scale"
                   className="w-full h-full object-cover"
                 />

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, ScaleIn } from '../animations/FadeIn'
-
-const dashboardImage = "https://www.figma.com/api/mcp/asset/7716318a-2d7a-4ed0-8b1a-32ba1337d773"
+import dashboardImage from '../../img/analise/dashboard.jpg'
 
 export default function AnaliseDashboards() {
   const cards = [

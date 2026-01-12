@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-
-const diagnosticoImage = "https://www.figma.com/api/mcp/asset/563c0de1-4102-4ea1-ac41-ece933a2afbb"
+import diagnosticoImage from '../../img/marketing/diagnostico.jpg'
 
 export default function MarketingDiagnostico() {
   const cards = [

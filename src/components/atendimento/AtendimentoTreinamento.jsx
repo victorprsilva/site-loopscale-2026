@@ -1,7 +1,6 @@
 import { Check } from 'lucide-react'
 import { FadeIn, ScaleIn } from '../animations/FadeIn'
-
-const treinamentoImage = "https://www.figma.com/api/mcp/asset/9c0a1519-813b-4d58-b2d5-e25d82233eff"
+import treinamentoImage from '../../img/atendimento/treinamento.jpg'
 
 export default function AtendimentoTreinamento() {
   const checkpoints = [

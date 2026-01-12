@@ -22,60 +22,68 @@ export default function Footer() {
               to="/marketing" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"
             >
-              SERVIÇO
+              MARKETING
             </Link>
-            <a 
-              href="#depoimentos" 
+            <Link 
+              to="/ebooks" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"
             >
-              DEPOIMENTOS
-            </a>
-            <a 
-              href="#diagnostico" 
+              EBOOKS
+            </Link>
+            <Link 
+              to="/analise" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"
             >
-              DIAGNÓSTICO
-            </a>
-            <a 
-              href="#contato" 
+              ANÁLISE
+            </Link>
+            <Link 
+              to="/contato" 
               className="text-[#5c5c5c] text-[12px] font-inter uppercase tracking-[-0.36px] hover:text-white transition-colors"
             >
               CONTATO
-            </a>
+            </Link>
           </nav>
 
           <div className="flex flex-col items-center lg:items-start">
             <a 
-              href="mailto:contato@loopscale.com.br" 
+              href="mailto:comercial@loopscale.com.br" 
               className="text-white text-[14px] md:text-[16px] lg:text-[18px] font-montserrat leading-[1.4] tracking-[-0.54px] hover:text-gray-300 transition-colors"
             >
-              contato@loopscale.com.br
+              comercial@loopscale.com.br
             </a>
             
             <div className="flex gap-3 mt-4 md:mt-5 justify-center lg:justify-start">
               <a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61575601150808" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 md:w-[32px] md:h-[32px] rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={12} className="text-[#f6f6f6]" />
               </a>
               <a 
-                href="#" 
+                href="http://instagram.com/loop_scale" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 md:w-[32px] md:h-[32px] rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={16} className="text-[#f6f6f6]" />
               </a>
               <a 
-                href="#" 
+                href="https://youtube.com/@loop_scale?si=GjMlh1Uke5obCZBd" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 md:w-[32px] md:h-[32px] rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube size={16} className="text-[#f6f6f6]" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/loop-scale" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 md:w-[32px] md:h-[32px] rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 aria-label="LinkedIn"
               >

@@ -1,6 +1,5 @@
 import { FadeIn, ScaleIn } from './animations/FadeIn'
-
-const imgJoao = "https://www.figma.com/api/mcp/asset/63f123cd-b08f-4e4f-baea-f0d585e76dd0"
+import imgJoao from '../img/about/joao.jpg'
 
 export default function AboutWhoWeAre() {
   return (

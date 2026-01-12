@@ -9,14 +9,43 @@ export default function AtendimentoHero() {
     telefone: '',
     site: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    try {
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          pagina: 'Atendimento'
+        })
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setSubmitMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.')
+        setFormData({ nome: '', email: '', telefone: '', site: '' })
+      } else {
+        setSubmitMessage('Erro ao enviar mensagem. Tente novamente.')
+      }
+    } catch (error) {
+      setSubmitMessage('Erro ao enviar mensagem. Tente novamente.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -107,16 +136,23 @@ export default function AtendimentoHero() {
                 />
               </fieldset>
 
+              {submitMessage && (
+                <div className={`p-4 rounded-lg text-center ${submitMessage.includes('sucesso') ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                  {submitMessage}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="relative overflow-hidden w-full bg-loopscale-blue text-white px-5 py-4 flex items-center justify-center gap-[10px] font-inter text-[14px] tracking-[0.84px] transition-colors duration-300 group"
+                disabled={isSubmitting}
+                className="relative overflow-hidden w-full bg-loopscale-blue text-white px-5 py-4 flex items-center justify-center gap-[10px] font-inter text-[14px] tracking-[0.84px] transition-colors duration-300 group disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <span 
                   className="absolute inset-0 bg-loopscale-blue-dark transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"
                   aria-hidden="true"
                 />
                 <span className="relative z-10 flex items-center gap-[10px]">
-                  Enviar
+                  {isSubmitting ? 'Enviando...' : 'Enviar'}
                   <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </button>

@@ -1,13 +1,12 @@
 import { ChevronRight, TrendingUp, HandCoins, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-
-const heroImage1 = "https://www.figma.com/api/mcp/asset/e932723e-e788-44eb-930a-7aba4075a784"
-const heroImage2 = "https://www.figma.com/api/mcp/asset/eed46c77-5c20-4374-84e3-8bfbbd31b728"
-const heroImage3 = "https://www.figma.com/api/mcp/asset/c0f18363-9f62-4ef2-b5d6-c4ae2a6f5506"
-const heroImage4 = "https://www.figma.com/api/mcp/asset/b105775c-83e1-431b-b56e-d16a00aedcd7"
-const heroImage5 = "https://www.figma.com/api/mcp/asset/fab97d76-2739-4ab8-a8b7-b9d75a15a9ce"
-const heroImage6 = "https://www.figma.com/api/mcp/asset/1277b4d3-b774-4e7e-8f5c-20d99dfebc0a"
+import heroImage1 from '../../img/home/hero-1.jpg'
+import heroImage2 from '../../img/home/hero-2.jpg'
+import heroImage3 from '../../img/home/hero-3.jpg'
+import heroImage4 from '../../img/home/hero-4.jpg'
+import heroImage5 from '../../img/home/hero-5.jpg'
+import heroImage6 from '../../img/home/hero-6.jpg'
 
 export default function HomeHero() {
   const bullets = [

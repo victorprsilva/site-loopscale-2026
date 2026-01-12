@@ -1,6 +1,5 @@
 import { FadeIn, ScaleIn } from '../animations/FadeIn'
-
-const womanImage = "https://www.figma.com/api/mcp/asset/c96607c5-5b09-41d1-a4d6-54e3ba1c7787"
+import womanImage from '../../img/marketing/woman.jpg'
 
 export default function MarketingEstrutura() {
   return (

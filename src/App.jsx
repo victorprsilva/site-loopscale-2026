@@ -9,6 +9,7 @@ import Case from './pages/Case'
 import Contato from './pages/Contato'
 import Ebooks from './pages/Ebooks'
 import Aulas from './pages/Aulas'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contato" element={<Contato />} />
         <Route path="/ebooks" element={<Ebooks />} />
         <Route path="/aulas" element={<Aulas />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   )

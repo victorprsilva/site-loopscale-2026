@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from './animations/FadeIn'
-
-const img1 = "https://www.figma.com/api/mcp/asset/3bdd4101-fbec-4b81-9fb1-cd0ab39f6cf7"
-const img2 = "https://www.figma.com/api/mcp/asset/fb0a4c61-938c-4be3-b34b-7547214c80ab"
-const img3 = "https://www.figma.com/api/mcp/asset/913f0669-aa70-4fa5-bf66-aaa50d30f45c"
+import img1 from '../img/about/target-1.jpg'
+import img2 from '../img/about/target-2.jpg'
+import img3 from '../img/about/target-3.jpg'
 
 export default function AboutTarget() {
   const images = [img1, img2, img3, img1, img2, img3]

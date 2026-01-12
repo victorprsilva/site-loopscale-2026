@@ -1,7 +1,6 @@
 import { Check } from 'lucide-react'
 import { FadeIn, ScaleIn } from '../animations/FadeIn'
-
-const integracaoImage = "https://www.figma.com/api/mcp/asset/85fb43cb-eac9-44ed-8eab-98ef9ef8490d"
+import integracaoImage from '../../img/analise/integracao.jpg'
 
 export default function AnaliseIntegracao() {
   const checkpoints = [

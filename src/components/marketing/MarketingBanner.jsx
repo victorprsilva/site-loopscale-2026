@@ -1,6 +1,5 @@
 import { ScaleIn } from '../animations/FadeIn'
-
-const bannerImage = "https://www.figma.com/api/mcp/asset/5559168c-8d02-4cad-b88e-3c7852cc6cd7"
+import bannerImage from '../../img/marketing/banner.jpg'
 
 export default function MarketingBanner() {
   return (
