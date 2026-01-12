@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChevronRight } from 'lucide-react'
 import { FadeIn } from '../animations/FadeIn'
+import { formatPhone, formatWebsite } from '../../utils/formatters'
 
 export default function ContatoHero() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,14 @@ export default function ContatoHero() {
   const [submitMessage, setSubmitMessage] = useState('')
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
+    const { name, value } = e.target
+    let formattedValue = value
+
+    if (name === 'telefone') {
+      formattedValue = formatPhone(value)
+    }
+
+    setFormData({ ...formData, [name]: formattedValue })
   }
 
   const handleSubmit = async (e) => {
@@ -29,6 +37,7 @@ export default function ContatoHero() {
         },
         body: JSON.stringify({
           ...formData,
+          site: formData.site ? formatWebsite(formData.site) : '',
           pagina: 'Contato'
         })
       })

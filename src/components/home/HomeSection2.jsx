@@ -79,15 +79,27 @@ export default function HomeSection2() {
           {focusCards.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <div className={`${card.bgColor} rounded-lg p-6 h-[400px] md:h-[450px] lg:h-[465px] flex flex-col justify-between overflow-hidden relative`}>
-                <h3 className="text-white text-[20px] md:text-[22px] lg:text-[24px] font-montserrat font-bold text-center leading-tight tracking-[-0.72px] relative z-10">
+                <h3 className="text-white text-[20px] md:text-[22px] lg:text-[24px] font-montserrat font-bold leading-tight tracking-[-0.72px] relative z-10 px-4">
                   {card.title}
                 </h3>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] h-[280px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
-                  <img 
-                    src={card.image}
-                    alt=""
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full h-[280px] md:h-[300px] flex items-center justify-center">
+                  <div className="w-[280px] h-[280px] md:w-[300px] md:h-[300px] rounded-full relative overflow-hidden">
+                    <div 
+                      className="absolute inset-0"
+                      style={{
+                        backgroundImage: `url(${card.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: '50% 50%',
+                        backgroundRepeat: 'no-repeat'
+                      }}
+                    />
+                    <div 
+                      className="absolute inset-0 rounded-full"
+                      style={{
+                        background: 'radial-gradient(circle, transparent 40%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.8) 100%)'
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </FadeInStaggerItem>

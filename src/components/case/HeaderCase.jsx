@@ -149,7 +149,7 @@ export default function HeaderCase() {
         </ul>
 
         <Link 
-          to="#contato" 
+          to="/contato" 
           className="relative overflow-hidden hidden lg:flex bg-loopscale-blue text-white px-5 py-3 lg:px-[20px] lg:py-[16px] h-[48px] lg:h-[53px] items-center gap-[10px] font-inter text-[14px] tracking-[0.84px] group"
         >
           <span 
@@ -262,7 +262,7 @@ export default function HeaderCase() {
 
             <li className="pt-4">
               <Link 
-                to="#contato" 
+                to="/contato" 
                 className="relative overflow-hidden flex items-center justify-center gap-2 bg-loopscale-blue text-white px-5 py-3 font-inter text-[14px] tracking-[0.84px] w-full group"
                 onClick={() => setMobileMenuOpen(false)}
               >

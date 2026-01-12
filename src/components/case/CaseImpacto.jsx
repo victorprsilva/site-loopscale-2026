@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
 
@@ -44,8 +45,8 @@ export default function CaseImpacto() {
               </p>
             </div>
             
-            <a 
-              href="#contato" 
+            <Link 
+              to="/contato" 
               className="relative overflow-hidden bg-loopscale-blue text-white px-[23px] py-[14px] h-[48px] flex items-center justify-center gap-[10px] font-inter text-[14px] tracking-[0.84px] w-full lg:w-auto group flex-shrink-0"
             >
               <span 
@@ -56,7 +57,7 @@ export default function CaseImpacto() {
                 Quero aprender como aplicar na minha empresa
                 <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
               </span>
-            </a>
+            </Link>
           </div>
         </FadeIn>
       </div>
