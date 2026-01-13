@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import AtendimentoHero from '../components/atendimento/AtendimentoHero'
@@ -12,6 +13,10 @@ import AtendimentoTreinamento from '../components/atendimento/AtendimentoTreinam
 export default function Atendimento() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Atendimento ao Cliente"
+        description="Estruture fluxos de atendimento eficientes, crie manuais de operação e treine sua equipe para entregar uma experiência excepcional ao cliente."
+      />
       <Header />
       <main className="flex-1">
         <AtendimentoHero />

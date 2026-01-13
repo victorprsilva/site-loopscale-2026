@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import ebookImage1 from '../../img/ebooks/ebook-1.jpg'
-import ebookImage2 from '../../img/ebooks/ebook-2.jpg'
+import ebookImage1 from '../../img/ebooks/ebook-1.webp'
+import ebookImage2 from '../../img/ebooks/ebook-2.webp'
 
 export default function EbooksHero() {
   const ebooks = [

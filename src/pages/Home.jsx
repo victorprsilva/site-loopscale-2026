@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import HeaderCase from '../components/case/HeaderCase'
 import Footer from '../components/Footer'
 import HomeHero from '../components/home/HomeHero'
@@ -13,6 +14,10 @@ import HomeSection8 from '../components/home/HomeSection8'
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Consultoria de Crescimento Empresarial"
+        description="A Loop Scale é especialista em estruturar operações de marketing, vendas e atendimento para empresas que faturam e querem escalar com previsibilidade. Mais de 15 anos de experiência e R$250 milhões em vendas geradas."
+      />
       <HeaderCase />
       <main className="flex-1">
         <HomeHero />

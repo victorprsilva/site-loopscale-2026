@@ -1,7 +1,7 @@
 import { ChevronRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from './animations/FadeIn'
-import iconeEscudo from '../img/icone_escudo.png'
+import iconeEscudo from '../img/icone_escudo.webp'
 
 export default function AboutMission() {
   const painPoints = [

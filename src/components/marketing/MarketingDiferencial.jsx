@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import rocketImage from '../../img/marketing/rocket.jpg'
+import rocketImage from '../../img/marketing/rocket.webp'
 
 export default function MarketingDiferencial() {
   const cards = [

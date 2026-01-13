@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MarketingHero from '../components/marketing/MarketingHero'
@@ -11,6 +12,10 @@ import MarketingEstrutura from '../components/marketing/MarketingEstrutura'
 export default function Marketing() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Marketing Integrado"
+        description="Estruture seu marketing com processo, previsibilidade e alinhamento. Do primeiro clique ao fechamento, criamos uma operação integrada que gera resultados reais para sua empresa."
+      />
       <Header />
       <main className="flex-1">
         <MarketingHero />

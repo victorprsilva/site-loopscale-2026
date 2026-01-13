@@ -1,5 +1,5 @@
 import { ScaleIn } from '../animations/FadeIn'
-import bannerImage from '../../img/marketing/banner.jpg'
+import bannerImage from '../../img/marketing/banner.webp'
 
 export default function MarketingBanner() {
   return (

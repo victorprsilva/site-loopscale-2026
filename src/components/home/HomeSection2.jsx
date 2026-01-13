@@ -1,9 +1,9 @@
 import { ChevronRight, CheckCircle } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import cardImage1 from '../../img/home/section2-card-1.jpg'
-import cardImage2 from '../../img/home/section2-card-2.jpg'
-import cardImage3 from '../../img/home/section2-card-3.jpg'
+import cardImage1 from '../../img/home/section2-card-1.webp'
+import cardImage2 from '../../img/home/section2-card-2.webp'
+import cardImage3 from '../../img/home/section2-card-3.webp'
 
 export default function HomeSection2() {
   const focusCards = [

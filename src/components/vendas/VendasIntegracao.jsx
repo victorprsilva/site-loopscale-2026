@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react'
 import { FadeIn, ScaleIn } from '../animations/FadeIn'
-import integracaoImage from '../../img/vendas/integracao.jpg'
+import integracaoImage from '../../img/vendas/integracao.webp'
 
 export default function VendasIntegracao() {
   const checkpoints = [

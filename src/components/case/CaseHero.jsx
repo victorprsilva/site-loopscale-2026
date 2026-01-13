@@ -1,17 +1,19 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Play } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import thumbImage from '../../img/thumb.png'
-import logoComCristo from '../../img/case/logo-comcristo.png'
-import logoKings from '../../img/case/logo-kings.png'
-import logoYamaha from '../../img/case/logo-yamaha.png'
-import logoNacionalInn from '../../img/case/logo-nacionalinn.png'
-import logoAddebitare from '../../img/case/logo-addebitare.png'
-import logoShineray from '../../img/case/logo-shineray.png'
+import thumbImage from '../../img/thumb.webp'
+import logoComCristo from '../../img/case/logo-comcristo.webp'
+import logoKings from '../../img/case/logo-kings.webp'
+import logoYamaha from '../../img/case/logo-yamaha.webp'
+import logoNacionalInn from '../../img/case/logo-nacionalinn.webp'
+import logoAddebitare from '../../img/case/logo-addebitare.webp'
+import logoShineray from '../../img/case/logo-shineray.webp'
 
 export default function CaseHero() {
   const [activeVideo, setActiveVideo] = useState(null)
+  const scrollContainerRef = useRef(null)
+  const logoScrollRef = useRef(null)
 
   const videos = [
     { id: 0, youtubeId: "MLpWrANjFbI", title: "Case 1" },
@@ -32,6 +34,14 @@ export default function CaseHero() {
     setActiveVideo(videoId)
   }
 
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft
+      const itemWidth = scrollContainerRef.current.offsetWidth
+      const newSlide = Math.round(scrollLeft / itemWidth)
+    }
+  }
+
   return (
     <section className="w-full bg-black pt-[120px] md:pt-[140px] pb-12 md:pb-16 lg:pb-20">
       <div className="max-w-[1920px] mx-auto">
@@ -47,8 +57,9 @@ export default function CaseHero() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="relative mb-16 md:mb-20 lg:mb-24 px-4">
-          <div className="flex items-center justify-center gap-4 md:gap-6">
+        <FadeIn delay={0.2} className="relative mb-16 md:mb-20 lg:mb-24">
+          {/* Desktop: 3 videos side by side */}
+          <div className="hidden md:flex items-center justify-center gap-4 md:gap-6 px-4">
             <div 
               className="hidden md:block w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
               onClick={() => handlePlayVideo(0)}
@@ -137,14 +148,59 @@ export default function CaseHero() {
               )}
             </div>
           </div>
+
+          {/* Mobile: Swipeable slider */}
+          <div 
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+            className="md:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 px-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {videos.map((video, index) => (
+              <div 
+                key={index}
+                className="flex-shrink-0 w-full snap-center"
+              >
+                <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
+                  {activeVideo === index ? (
+                    <iframe
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <>
+                      <img 
+                        src={thumbImage}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div 
+                        className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                        onClick={() => handlePlayVideo(index)}
+                      >
+                        <div className="w-[60px] h-[60px] rounded-full bg-gray-600/80 border-2 border-loopscale-blue flex items-center justify-center hover:bg-gray-500/80 transition-colors">
+                          <Play size={24} className="text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="px-4 md:px-8 lg:px-16">
+        {/* Desktop: Grid of logos */}
+        <FadeInStagger staggerDelay={0.1} className="hidden md:block px-4 md:px-8 lg:px-16">
           <div className="flex flex-wrap justify-center gap-0">
             {logos.map((logo, index) => (
               <FadeInStaggerItem key={index}>
                 <motion.div 
-                  className="bg-white w-[calc(50%-0px)] sm:w-[160px] md:w-[180px] lg:w-[224px] h-[100px] sm:h-[130px] md:h-[150px] lg:h-[176px] flex items-center justify-center p-4"
+                  className="bg-white w-[160px] md:w-[180px] lg:w-[224px] h-[130px] md:h-[150px] lg:h-[176px] flex items-center justify-center p-4"
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
                   <img 
@@ -157,6 +213,43 @@ export default function CaseHero() {
             ))}
           </div>
         </FadeInStagger>
+
+        {/* Mobile: Slider with 2 logos at a time */}
+        <FadeIn className="md:hidden px-4">
+          <div 
+            ref={logoScrollRef}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-0"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {Array.from({ length: Math.ceil(logos.length / 2) }).map((_, slideIndex) => (
+              <div 
+                key={slideIndex}
+                className="flex-shrink-0 w-full snap-center flex gap-0"
+              >
+                {logos.slice(slideIndex * 2, slideIndex * 2 + 2).map((logo, index) => (
+                  <div 
+                    key={index}
+                    className="bg-white w-1/2 h-[130px] flex items-center justify-center p-4"
+                  >
+                    <img 
+                      src={logo.image}
+                      alt={logo.name}
+                      className="max-w-[80%] max-h-[80%] object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center gap-2 mt-4">
+            {Array.from({ length: Math.ceil(logos.length / 2) }).map((_, index) => (
+              <div
+                key={index}
+                className="w-2 h-2 rounded-full bg-gray-600"
+              />
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   )

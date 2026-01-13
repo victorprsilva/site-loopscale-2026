@@ -1,5 +1,5 @@
 import { ScaleIn } from './animations/FadeIn'
-import imgInfinity from '../img/about/infinity.png'
+import imgInfinity from '../img/about/infinity.webp'
 
 export default function AboutInfinity() {
   return (

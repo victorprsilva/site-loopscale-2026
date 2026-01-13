@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem, ScaleIn } from '../animations/FadeIn'
-import dashboardImage from '../../img/analise/dashboard.jpg'
+import dashboardImage from '../../img/analise/dashboard.webp'
 
 export default function AnaliseDashboards() {
   const cards = [

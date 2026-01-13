@@ -1,6 +1,6 @@
 import { Check } from 'lucide-react'
 import { FadeIn, ScaleIn } from '../animations/FadeIn'
-import treinamentoImage from '../../img/atendimento/treinamento.jpg'
+import treinamentoImage from '../../img/atendimento/treinamento.webp'
 
 export default function AtendimentoTreinamento() {
   const checkpoints = [

@@ -1,5 +1,5 @@
 import { FadeIn, ScaleIn } from './animations/FadeIn'
-import imgJoao from '../img/about/joao.jpg'
+import imgJoao from '../img/about/joao.webp'
 
 export default function AboutWhoWeAre() {
   return (

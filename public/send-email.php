@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     
-    $to = 'comercial@loopscale.com.br';
+    $to = 'comercial@loopscale.com.br, joaonavia@loopscale.com.br';
     $subject = "Novo contato do site - $pagina";
     
     $body = "Novo contato recebido do site Loop Scale\n\n";

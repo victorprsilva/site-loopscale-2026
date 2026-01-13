@@ -1,7 +1,7 @@
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import bgImage from '../../img/home/section5-bg.jpg'
+import bgImage from '../../img/home/section5-bg.webp'
 
 export default function HomeSection5() {
   const steps = [

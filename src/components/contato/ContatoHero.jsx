@@ -89,7 +89,7 @@ export default function ContatoHero() {
                   atendimento@loopscale.com
                 </p>
                 <p className="text-black text-[16px] md:text-[18px] font-inter">
-                  11 9 9999-9999
+                  35 984767479
                 </p>
               </div>
             </FadeIn>

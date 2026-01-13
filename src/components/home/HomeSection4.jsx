@@ -1,7 +1,7 @@
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import cardImage1 from '../../img/home/section4-card-1.jpg'
-import cardImage2 from '../../img/home/section4-card-2.jpg'
-import cardImage3 from '../../img/home/section4-card-3.jpg'
+import cardImage1 from '../../img/home/section4-card-1.webp'
+import cardImage2 from '../../img/home/section4-card-2.webp'
+import cardImage3 from '../../img/home/section4-card-3.webp'
 
 export default function HomeSection4() {
   const cards = [

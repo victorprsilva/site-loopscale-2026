@@ -1,5 +1,5 @@
 import { ScaleIn } from '../animations/FadeIn'
-import bannerImage from '../../img/atendimento/banner.jpg'
+import bannerImage from '../../img/atendimento/banner.webp'
 
 export default function AtendimentoBanner() {
   return (

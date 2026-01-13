@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from './animations/FadeIn'
-import img1 from '../img/about/target-1.jpg'
-import img2 from '../img/about/target-2.jpg'
-import img3 from '../img/about/target-3.jpg'
+import img1 from '../img/about/target-1.webp'
+import img2 from '../img/about/target-2.webp'
+import img3 from '../img/about/target-3.webp'
+import img4 from '../img/about/target-4.webp'
+import img5 from '../img/about/target-5.webp' 
+import img6 from '../img/about/target-6.webp'
 
 export default function AboutTarget() {
-  const images = [img1, img2, img3, img1, img2, img3]
+  const images = [img1, img2, img3, img4, img5, img6]
 
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">

@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Play } from 'lucide-react'
 import { FadeIn } from '../animations/FadeIn'
-import thumbImage from '../../img/thumb.png'
+import thumbImage from '../../img/thumb.webp'
 
 export default function HomeSection6() {
   const [activeVideo, setActiveVideo] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(1)
+  const scrollContainerRef = useRef(null)
 
   const videos = [
     { id: 0, youtubeId: "MLpWrANjFbI", title: "Case 1" },
@@ -14,6 +16,15 @@ export default function HomeSection6() {
 
   const handlePlayVideo = (videoId) => {
     setActiveVideo(videoId)
+  }
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollLeft = scrollContainerRef.current.scrollLeft
+      const itemWidth = scrollContainerRef.current.offsetWidth
+      const newSlide = Math.round(scrollLeft / itemWidth)
+      setCurrentSlide(newSlide)
+    }
   }
 
   return (
@@ -33,8 +44,9 @@ export default function HomeSection6() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="relative mb-8 md:mb-12 px-4">
-          <div className="flex items-center justify-center gap-4 md:gap-6">
+        <FadeIn delay={0.2} className="relative mb-8 md:mb-12">
+          {/* Desktop: 3 videos side by side */}
+          <div className="hidden md:flex items-center justify-center gap-4 md:gap-6 px-4">
             <div 
               className="hidden md:block w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
               onClick={() => handlePlayVideo(0)}
@@ -121,6 +133,50 @@ export default function HomeSection6() {
                 </>
               )}
             </div>
+          </div>
+
+          {/* Mobile: Swipeable slider */}
+          <div 
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+            className="md:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 px-4"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {videos.map((video, index) => (
+              <div 
+                key={index}
+                className="flex-shrink-0 w-full snap-center"
+              >
+                <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
+                  {activeVideo === index ? (
+                    <iframe
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <>
+                      <img 
+                        src={thumbImage}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div 
+                        className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                        onClick={() => handlePlayVideo(index)}
+                      >
+                        <div className="w-[60px] h-[60px] rounded-full bg-gray-600/80 border-2 border-loopscale-blue flex items-center justify-center hover:bg-gray-500/80 transition-colors">
+                          <Play size={24} className="text-white ml-1" fill="white" />
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="flex justify-center gap-2 mt-6">

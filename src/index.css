@@ -17,3 +17,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Hide scrollbar for mobile sliders */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

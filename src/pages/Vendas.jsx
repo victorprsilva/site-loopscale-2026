@@ -1,3 +1,4 @@
+import SEO from '../components/SEO'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import VendasHero from '../components/vendas/VendasHero'
@@ -11,6 +12,10 @@ import VendasIntegracao from '../components/vendas/VendasIntegracao'
 export default function Vendas() {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Vendas Estruturadas"
+        description="Transforme sua equipe comercial com processos claros, playbooks de vendas e metas realistas. Estruture uma operação de vendas que escala com previsibilidade."
+      />
       <Header />
       <main className="flex-1">
         <VendasHero />

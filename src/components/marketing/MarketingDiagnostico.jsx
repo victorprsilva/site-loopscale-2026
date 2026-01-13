@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import diagnosticoImage from '../../img/marketing/diagnostico.jpg'
+import diagnosticoImage from '../../img/marketing/diagnostico.webp'
 
 export default function MarketingDiagnostico() {
   const cards = [

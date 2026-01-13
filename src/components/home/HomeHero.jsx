@@ -1,12 +1,12 @@
 import { ChevronRight, TrendingUp, HandCoins, BarChart3 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from '../animations/FadeIn'
-import heroImage1 from '../../img/home/hero-1.jpg'
-import heroImage2 from '../../img/home/hero-2.jpg'
-import heroImage3 from '../../img/home/hero-3.jpg'
-import heroImage4 from '../../img/home/hero-4.jpg'
-import heroImage5 from '../../img/home/hero-5.jpg'
-import heroImage6 from '../../img/home/hero-6.jpg'
+import heroImage1 from '../../img/home/hero-1.webp'
+import heroImage2 from '../../img/home/hero-2.webp'
+import heroImage3 from '../../img/home/hero-3.webp'
+import heroImage4 from '../../img/home/hero-4.webp'
+import heroImage5 from '../../img/home/hero-5.webp'
+import heroImage6 from '../../img/home/hero-6.webp'
 
 export default function HomeHero() {
   const bullets = [
@@ -69,36 +69,36 @@ export default function HomeHero() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.2} direction="left" className="flex-1">
+          <FadeIn delay={0.2} direction="left" className="flex-1 hidden lg:block">
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[200px] md:h-[280px] lg:h-[300px] xl:h-[431px] rounded-lg overflow-hidden">
-                  <img src={heroImage1} alt="" className="w-full h-full object-cover" />
+                  <img src={heroImage1} alt="Equipe de marketing em reunião" width={400} height={431} className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[200px] md:h-[280px] lg:h-[290px] xl:h-[418px] rounded-lg overflow-hidden">
-                  <img src={heroImage2} alt="" className="w-full h-full object-cover" />
+                  <img src={heroImage2} alt="Análise de dados empresariais" width={400} height={418} className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[364px] rounded-lg overflow-hidden">
-                  <img src={heroImage3} alt="" className="w-full h-full object-cover" />
+                  <img src={heroImage3} alt="Estratégia de vendas" width={400} height={364} loading="lazy" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[361px] rounded-lg overflow-hidden">
-                  <img src={heroImage4} alt="" className="w-full h-full object-cover" />
+                  <img src={heroImage4} alt="Crescimento empresarial" width={400} height={361} loading="lazy" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[361px] rounded-lg overflow-hidden">
-                  <img src={heroImage6} alt="" className="w-full h-full object-cover" />
+                  <img src={heroImage6} alt="Consultoria de negócios" width={400} height={361} loading="lazy" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[180px] md:h-[240px] lg:h-[260px] xl:h-[361px] rounded-lg overflow-hidden">
-                  <img src={heroImage5} alt="" className="w-full h-full object-cover" />
+                  <img src={heroImage5} alt="Planejamento estratégico" width={400} height={361} loading="lazy" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

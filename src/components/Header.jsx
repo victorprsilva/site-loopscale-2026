@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react'
 import logo from '../img/logo.svg'
-import submenuImage from '../img/menu.png'
+import submenuImage from '../img/menu.webp'
 
 const servicos = [
   { name: 'Marketing', path: '/marketing' },

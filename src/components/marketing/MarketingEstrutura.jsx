@@ -1,5 +1,5 @@
 import { FadeIn, ScaleIn } from '../animations/FadeIn'
-import womanImage from '../../img/marketing/woman.jpg'
+import womanImage from '../../img/marketing/woman.webp'
 
 export default function MarketingEstrutura() {
   return (

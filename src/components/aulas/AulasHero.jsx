@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Play } from 'lucide-react'
 import { FadeIn } from '../animations/FadeIn'
-import channelLogo from '../../img/aulas/channel-logo.jpg'
+import channelLogo from '../../img/aulas/channel-logo.webp'
 
 export default function AulasHero() {
   const [isPlaying, setIsPlaying] = useState(false)
