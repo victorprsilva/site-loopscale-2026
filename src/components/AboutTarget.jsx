@@ -28,7 +28,7 @@ export default function AboutTarget() {
           </p>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.08} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-8">
+        <FadeInStagger staggerDelay={0.08} className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 md:gap-6 xl:gap-8">
           {images.map((img, index) => (
             <FadeInStaggerItem key={index}>
               <motion.div 

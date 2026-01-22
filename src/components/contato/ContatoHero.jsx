@@ -1,14 +1,17 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import { FadeIn } from '../animations/FadeIn'
 import { formatPhone, formatWebsite } from '../../utils/formatters'
 
 export default function ContatoHero() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
     telefone: '',
-    site: ''
+    site: '',
+    numeroFuncionarios: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
@@ -45,8 +48,7 @@ export default function ContatoHero() {
       const data = await response.json()
 
       if (data.success) {
-        setSubmitMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.')
-        setFormData({ nome: '', email: '', telefone: '', site: '' })
+        navigate('/obrigado')
       } else {
         setSubmitMessage('Erro ao enviar mensagem. Tente novamente.')
       }
@@ -60,7 +62,7 @@ export default function ContatoHero() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-20">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-12 xl:gap-20 xl:gap-32">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16 2xl:gap-24">
           <div className="flex-1 max-w-[715px]">
             <FadeIn delay={0.1}>
               <p className="text-loopscale-blue text-[14px] md:text-[16px] font-inter mb-4 md:mb-6">
@@ -86,7 +88,7 @@ export default function ContatoHero() {
                   ENTRE EM CONTATO
                 </p>
                 <p className="text-black text-[16px] md:text-[18px] font-inter mb-3">
-                  atendimento@loopscale.com
+                 comercial@loopscale.com.br 
                 </p>
                 <p className="text-black text-[16px] md:text-[18px] font-inter">
                   35 984767479
@@ -145,7 +147,7 @@ export default function ContatoHero() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.4} direction="left" className="w-full lg:w-[495px] flex-shrink-0">
+          <FadeIn delay={0.4} direction="left" className="w-full xl:w-[495px] flex-shrink-0">
             <form onSubmit={handleSubmit} className="space-y-5">
               <fieldset className="border border-black px-4 pb-4 pt-1">
                 <legend className="text-[14px] text-black font-inter px-2">Nome</legend>
@@ -154,7 +156,7 @@ export default function ContatoHero() {
                   name="nome"
                   value={formData.nome}
                   onChange={handleChange}
-                  placeholder="Jeferson arantes"
+                  placeholder="Seu nome"
                   className="w-full text-[16px] font-inter text-black placeholder:text-gray-400 focus:outline-none bg-transparent"
                 />
               </fieldset>
@@ -186,11 +188,23 @@ export default function ContatoHero() {
               <fieldset className="border border-black px-4 pb-4 pt-1">
                 <legend className="text-[14px] text-black font-inter px-2">Site da empresa</legend>
                 <input
-                  type="url"
+                  type="text"
                   name="site"
                   value={formData.site}
                   onChange={handleChange}
-                  placeholder="seu@email.com"
+                  placeholder="seusite.com.br"
+                  className="w-full text-[16px] font-inter text-black placeholder:text-gray-400 focus:outline-none bg-transparent"
+                />
+              </fieldset>
+
+              <fieldset className="border border-black px-4 pb-4 pt-1">
+                <legend className="text-[14px] text-black font-inter px-2">Número de funcionários</legend>
+                <input
+                  type="number"
+                  name="numeroFuncionarios"
+                  value={formData.numeroFuncionarios}
+                  onChange={handleChange}
+                  placeholder="0"
                   className="w-full text-[16px] font-inter text-black placeholder:text-gray-400 focus:outline-none bg-transparent"
                 />
               </fieldset>

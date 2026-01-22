@@ -31,7 +31,7 @@ export default function HomeSection7() {
           </h2>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-20">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-20">
           {metrics.map((metric, index) => (
             <FadeInStaggerItem key={index} className="border-l-2 border-black pl-4 md:pl-6">
               <p className="text-black text-[24px] md:text-[28px] lg:text-[32px] font-inter font-bold mb-2">
@@ -44,7 +44,7 @@ export default function HomeSection7() {
           ))}
         </FadeInStagger>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 items-start lg:items-end">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-20 items-start xl:items-end">
           <FadeIn className="flex-1 max-w-[700px]">
             <p className="text-black text-[24px] md:text-[32px] lg:text-[40px] font-inter font-bold leading-tight">
               <span className="text-loopscale-blue">Esses números</span> não são promessas.<br />

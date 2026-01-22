@@ -12,7 +12,7 @@ export default function VendasIntegracao() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[200px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16 2xl:gap-24">
           <div className="flex-1 max-w-[756px]">
             <FadeIn>
               <h2 className="text-black text-[28px] md:text-[36px] lg:text-[48px] font-inter font-bold leading-tight tracking-[-0.84px] md:tracking-[-1.44px] mb-8 md:mb-10">
@@ -41,19 +41,19 @@ export default function VendasIntegracao() {
             </FadeIn>
 
             <FadeIn delay={0.4}>
-              <div className="flex flex-col items-center md:items-start md:flex-row gap-8 md:gap-0">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start sm:justify-between gap-8 sm:gap-4">
                 {checkpoints.map((checkpoint, index) => (
-                  <div key={index} className="flex flex-col items-center md:flex-row md:items-center">
-                    <div className="flex flex-col items-center md:items-start">
-                      <div className="w-[80px] h-[80px] md:w-[61px] md:h-[61px] rounded-full bg-loopscale-blue/10 flex items-center justify-center mb-4">
-                        <Check size={24} className="text-loopscale-blue" strokeWidth={2} />
+                  <div key={index} className="flex flex-col items-center sm:flex-row sm:items-start flex-1">
+                    <div className="flex flex-col items-center sm:items-start">
+                      <div className="w-[60px] h-[60px] rounded-full bg-loopscale-blue/10 flex items-center justify-center mb-4">
+                        <Check size={20} className="text-loopscale-blue" strokeWidth={2} />
                       </div>
-                      <p className="text-loopscale-blue text-[14px] md:text-[16px] font-inter font-medium leading-[1.4] max-w-[180px] text-center md:text-left">
+                      <p className="text-loopscale-blue text-[14px] md:text-[16px] font-inter font-medium leading-[1.4] max-w-[200px] lg:max-w-[180px] text-center sm:text-left">
                         {checkpoint}
                       </p>
                     </div>
                     {index < checkpoints.length - 1 && (
-                      <div className="hidden md:block w-[80px] lg:w-[120px] xl:w-[180px] h-[2px] bg-loopscale-blue/30 mt-[40px] md:mt-[50px] mx-2 md:mx-4"></div>
+                      <div className="hidden sm:block w-[40px] md:w-[60px] lg:w-[80px] xl:w-[120px] h-[2px] bg-loopscale-blue/30 mt-[30px] mx-2 lg:mx-4 flex-shrink-0"></div>
                     )}
                   </div>
                 ))}
@@ -61,7 +61,7 @@ export default function VendasIntegracao() {
             </FadeIn>
           </div>
 
-          <ScaleIn delay={0.3} className="w-full lg:w-[400px] xl:w-[500px] 2xl:w-[641px] flex-shrink-0">
+          <ScaleIn delay={0.3} className="hidden xl:block w-full xl:w-[450px] 2xl:w-[641px] flex-shrink-0">
             <div className="w-full h-[400px] md:h-[500px] lg:h-[610px] rounded-lg overflow-hidden">
               <img 
                 src={integracaoImage}

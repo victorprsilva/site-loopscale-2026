@@ -30,7 +30,7 @@ export default function HomeHero() {
   return (
     <section className="w-full bg-black pt-[120px] md:pt-[140px] pb-12 md:pb-16 lg:pb-20">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 mb-16 md:mb-20 lg:mb-24">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-16 mb-16 md:mb-20 lg:mb-24">
           <div className="flex-1 max-w-[550px]">
             <FadeIn>
               <h1 className="text-white text-[48px] md:text-[64px] lg:text-[80px] font-montserrat font-black italic leading-[1] tracking-[-2px] md:tracking-[-3px] mb-8">
@@ -69,7 +69,7 @@ export default function HomeHero() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.2} direction="left" className="flex-1 hidden lg:block">
+          <FadeIn delay={0.2} direction="left" className="flex-1 hidden xl:block">
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div className="col-span-1 row-span-1">
                 <div className="w-full h-[200px] md:h-[280px] lg:h-[300px] xl:h-[431px] rounded-lg overflow-hidden">
@@ -105,14 +105,14 @@ export default function HomeHero() {
           </FadeIn>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          <FadeIn className="lg:w-[200px] flex-shrink-0">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12">
+          <FadeIn className="xl:w-[200px] flex-shrink-0">
             <h3 className="text-white text-[24px] md:text-[28px] font-inter font-bold leading-tight">
               Bullets com autoridade:
             </h3>
           </FadeIn>
 
-          <FadeInStagger staggerDelay={0.1} className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <FadeInStagger staggerDelay={0.1} className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12">
             {bullets.map((bullet, index) => (
               <FadeInStaggerItem key={index} className="flex flex-col">
                 <div className="w-[58px] h-[53px] bg-loopscale-blue/10 rounded flex items-center justify-center mb-4">

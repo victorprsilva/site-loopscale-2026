@@ -13,7 +13,7 @@ export default function HomeSection4() {
   return (
     <section className="w-full bg-[#E8E8E8] py-16 md:py-20 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mb-12 md:mb-16">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-20 mb-12 md:mb-16">
           <FadeIn className="flex-1 max-w-[550px]">
             <h2 className="text-black text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold italic leading-tight">
               Se essas dores te acompanham, a verdade é simples:
@@ -33,7 +33,7 @@ export default function HomeSection4() {
           </p>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
           {cards.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <div className="relative h-[400px] md:h-[450px] lg:h-[465px] rounded-lg overflow-hidden">

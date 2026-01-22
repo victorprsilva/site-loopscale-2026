@@ -14,7 +14,8 @@ export default function Marketing() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Marketing Integrado"
-        description="Estruture seu marketing com processo, previsibilidade e alinhamento. Do primeiro clique ao fechamento, criamos uma operação integrada que gera resultados reais para sua empresa."
+        description="Estruture seu marketing com processos claros, métricas reais e geração de demanda qualificada. Diagnóstico completo, implementação de CRM e automação para resultados previsíveis."
+        canonical="https://loopscale.com.br/marketing"
       />
       <Header />
       <main className="flex-1">

@@ -9,7 +9,8 @@ export default function Aulas() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Aulas e Vídeos"
-        description="Assista às aulas gratuitas do canal Loop Scale no YouTube. Aprenda sobre tráfego pago, marketing digital e estratégias de crescimento empresarial."
+        description="Assista nossas aulas gratuitas sobre marketing, vendas e crescimento empresarial. Conteúdo prático e direto ao ponto para aplicar no seu negócio."
+        canonical="https://loopscale.com.br/aulas"
       />
       <HeaderCase />
       <main className="flex-1">

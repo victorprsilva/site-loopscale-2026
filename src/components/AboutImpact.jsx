@@ -30,7 +30,7 @@ export default function AboutImpact() {
           </h2>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 lg:gap-16 mb-12 md:mb-16 lg:mb-24">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 xl:grid-cols-4 gap-6 md:gap-10 xl:gap-16 mb-12 md:mb-16 lg:mb-24">
           {metrics.map((metric, index) => (
             <FadeInStaggerItem key={index} className="relative pl-0 lg:pl-6 lg:border-l lg:border-gray-200 first:border-l-0 first:pl-0">
               <p className="text-black text-[20px] md:text-[28px] lg:text-[35px] font-inter font-normal leading-tight tracking-[-0.6px] md:tracking-[-1.05px] mb-2 md:mb-4">
@@ -44,7 +44,7 @@ export default function AboutImpact() {
         </FadeInStagger>
 
         <FadeIn delay={0.3}>
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+          <div className="flex flex-col xl:flex-row lg:items-start lg:justify-between gap-8">
             <p className="text-[20px] md:text-[28px] lg:text-[36px] font-montserrat leading-[1.4] tracking-[-0.6px] md:tracking-[-1.08px] max-w-[719px]">
               <span className="text-black">Esses números </span>
               <span className="text-[#615f5f]">

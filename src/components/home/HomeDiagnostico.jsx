@@ -11,7 +11,7 @@ export default function HomeDiagnostico() {
   return (
     <section className="w-full bg-black py-16 md:py-20 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mb-12 md:mb-16">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-20 mb-12 md:mb-16">
           <FadeIn className="flex-1 max-w-[500px]">
             <h2 className="text-white text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold leading-tight">
               Solicite seu Diagnóstico de Crescimento — gratuito, objetivo e sem enrolação
@@ -38,7 +38,7 @@ export default function HomeDiagnostico() {
           </p>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
           {cards.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <div className="bg-loopscale-blue rounded-lg p-6 md:p-8 h-full min-h-[200px] md:min-h-[250px] flex flex-col">

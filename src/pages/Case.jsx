@@ -9,7 +9,8 @@ export default function Case() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Cases de Sucesso"
-        description="Conheça os resultados que geramos: +R$250 milhões em vendas, +100 operações estruturadas e 30% de aumento médio em conversão nos primeiros 90 dias."
+        description="Conheça os resultados reais de empresas que transformaram suas operações com a Loop Scale. Mais de 100 empresas atendidas e R$250 milhões em vendas geradas."
+        canonical="https://loopscale.com.br/case"
       />
       <HeaderCase />
       <main className="flex-1">

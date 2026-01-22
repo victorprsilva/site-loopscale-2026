@@ -15,7 +15,8 @@ export default function Analise() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Análise de Dados"
-        description="Tome decisões baseadas em dados com dashboards personalizados, indicadores claros e rotinas de análise. Elimine o achismo e cresça com inteligência."
+        description="Transforme dados em decisões estratégicas. Dashboards personalizados, análise de métricas e integração de sistemas para uma visão completa do seu negócio."
+        canonical="https://loopscale.com.br/analise"
       />
       <Header />
       <main className="flex-1">

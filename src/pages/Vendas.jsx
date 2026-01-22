@@ -15,6 +15,7 @@ export default function Vendas() {
       <SEO 
         title="Vendas Estruturadas"
         description="Transforme sua equipe comercial com processos claros, playbooks de vendas e metas realistas. Estruture uma operação de vendas que escala com previsibilidade."
+        canonical="https://loopscale.com.br/vendas"
       />
       <Header />
       <main className="flex-1">

@@ -38,7 +38,7 @@ export default function CaseImpacto() {
         </FadeInStagger>
 
         <FadeIn delay={0.4}>
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+          <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-8">
             <div className="max-w-[719px]">
               <p className="text-black text-[24px] md:text-[32px] lg:text-[40px] font-inter font-bold italic leading-[1.25]">
                 <span className="text-loopscale-blue">Esses números</span> não são promessas. São o resultado natural de uma empresa que tem processo, cultura de análise e acompanhamento de verdade.

@@ -18,17 +18,17 @@ export default function MarketingDiferencial() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16">
           <div className="flex-1">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-16 lg:gap-32 mb-12 md:mb-16 lg:mb-20">
-              <FadeIn className="flex-shrink-0">
-                <h2 className="text-black text-[28px] md:text-[36px] lg:text-[48px] font-inter font-normal leading-tight tracking-[-0.84px] md:tracking-[-1.44px] max-w-[408px]">
+            <div className="mb-12 md:mb-16 lg:mb-20">
+              <FadeIn>
+                <h2 className="text-black text-[28px] md:text-[36px] lg:text-[48px] font-inter font-normal leading-tight tracking-[-0.84px] md:tracking-[-1.44px] max-w-[600px] mb-6 md:mb-8">
                   O grande diferencial da Loopscale está aqui.
                 </h2>
               </FadeIn>
               
-              <FadeIn delay={0.2} className="flex-1 max-w-[530px]">
-                <p className="text-[#615F5F] text-[15px] md:text-[16px] lg:text-[18px] font-inter leading-[1.7]">
+              <FadeIn delay={0.2}>
+                <p className="text-[#615F5F] text-[15px] md:text-[16px] lg:text-[18px] font-inter leading-[1.7] max-w-[700px]">
                   Antes de qualquer campanha ir pro ar, validamos a mensagem com o time de vendas. Não existe "prometer uma coisa e jogar o lead no colo do vendedor". A copy da campanha passa por leitura crítica junto com quem atende o cliente. E o atendimento também entra no circuito, pra saber que tipo de expectativa está sendo criada lá na frente.
                 </p>
               </FadeIn>
@@ -40,11 +40,11 @@ export default function MarketingDiferencial() {
               </p>
             </FadeIn>
 
-            <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10 md:mb-12">
+            <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5 mb-10 md:mb-12">
               {cards.map((card, index) => (
                 <FadeInStaggerItem key={index}>
                   <motion.div 
-                    className="bg-loopscale-blue p-6 md:p-8 min-h-[200px] md:min-h-[280px] lg:min-h-[308px] flex items-end"
+                    className="bg-loopscale-blue p-8 md:p-10 min-h-[200px] md:min-h-[280px] lg:min-h-[308px] flex items-start"
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
                     <p className="text-white text-[16px] md:text-[18px] lg:text-[20px] font-inter font-medium leading-[1.4]">
@@ -62,7 +62,7 @@ export default function MarketingDiferencial() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.3} direction="left" className="hidden lg:block w-[400px] xl:w-[500px] 2xl:w-[641px] flex-shrink-0">
+          <FadeIn delay={0.3} direction="left" className="hidden xl:block w-[400px] xl:w-[450px] 2xl:w-[641px] flex-shrink-0">
             <div className="w-full h-[500px] xl:h-[610px] rounded-lg overflow-hidden">
               <img 
                 src={rocketImage}

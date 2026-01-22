@@ -110,7 +110,12 @@ export default function HeaderCase() {
           </li>
 
           <li>
-            <a href="#blog" className="text-white hover:text-loopscale-blue transition-colors">
+            <a 
+              href="https://blog.loopscale.com.br/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white hover:text-loopscale-blue transition-colors"
+            >
               BLOG
             </a>
           </li>
@@ -224,7 +229,9 @@ export default function HeaderCase() {
 
             <li>
               <a 
-                href="#blog" 
+                href="https://blog.loopscale.com.br/" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="block py-3 text-white hover:text-loopscale-blue transition-colors border-b border-gray-800"
                 onClick={() => setMobileMenuOpen(false)}
               >

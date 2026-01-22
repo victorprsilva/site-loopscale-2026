@@ -37,8 +37,8 @@ export default function HomeSection3() {
   return (
     <section className="w-full bg-black py-16 md:py-20 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20">
-          <FadeIn className="lg:w-[595px] flex-shrink-0">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-20">
+          <FadeIn className="xl:w-[595px] flex-shrink-0">
             <h2 className="text-white text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold italic leading-tight mb-6">
               O que está travando sua empresa não é falta de esforço. É excesso de improviso.
             </h2>

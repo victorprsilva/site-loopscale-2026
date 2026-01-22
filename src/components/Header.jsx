@@ -102,6 +102,17 @@ export default function Header() {
             </Link>
           </li>
 
+          <li>
+            <a 
+              href="https://blog.loopscale.com.br/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-black hover:text-loopscale-blue transition-colors"
+            >
+              BLOG
+            </a>
+          </li>
+
           <li className="relative" ref={conteudoRef}>
             <button 
               className="flex items-center gap-[7px] text-black hover:text-loopscale-blue transition-colors uppercase"
@@ -207,6 +218,18 @@ export default function Header() {
               >
                 CASES
               </Link>
+            </li>
+
+            <li>
+              <a 
+                href="https://blog.loopscale.com.br/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block py-3 text-black hover:text-loopscale-blue transition-colors border-b border-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                BLOG
+              </a>
             </li>
 
             <li>

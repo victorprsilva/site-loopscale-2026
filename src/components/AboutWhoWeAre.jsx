@@ -5,7 +5,7 @@ export default function AboutWhoWeAre() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[216px]">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-[73px] items-start">
+        <div className="flex flex-col xl:flex-row gap-10 lg:gap-16 xl:gap-[73px] items-start">
           <div className="flex-1 max-w-[903px] order-2 lg:order-1">
             <FadeIn>
               <h2 className="text-black text-[24px] md:text-[28px] lg:text-[35px] font-inter font-normal leading-tight tracking-[-0.72px] md:tracking-[-1.05px] mb-6 md:mb-10 lg:mb-12">

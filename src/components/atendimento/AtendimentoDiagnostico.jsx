@@ -14,7 +14,7 @@ export default function AtendimentoDiagnostico() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[212px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16 2xl:gap-24">
           <div className="flex-1 max-w-[400px]">
             <FadeIn>
               <h2 className="text-black text-[28px] md:text-[36px] lg:text-[48px] font-inter font-normal leading-tight tracking-[-0.84px] md:tracking-[-1.44px] mb-8 md:mb-10">
@@ -32,11 +32,11 @@ export default function AtendimentoDiagnostico() {
             </FadeIn>
           </div>
 
-          <FadeInStagger staggerDelay={0.1} className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <FadeInStagger staggerDelay={0.1} className="flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
             {cards.map((card, index) => (
               <FadeInStaggerItem key={index}>
                 <motion.div 
-                  className="bg-loopscale-blue p-6 md:p-8 min-h-[180px] md:min-h-[220px] flex items-end"
+                  className="bg-loopscale-blue p-8 md:p-10 min-h-[180px] md:min-h-[220px] flex items-start"
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
                   <p className="text-white text-[14px] md:text-[16px] font-inter font-medium leading-[1.5]">

@@ -14,6 +14,7 @@ export default function Sobre() {
       <SEO 
         title="Sobre Nós"
         description="Conheça a Loop Scale: mais de 15 anos de experiência em marketing, vendas e crescimento empresarial. Somos o parceiro que entra no jogo com você para construir uma máquina de receita previsível."
+        canonical="https://loopscale.com.br/sobre"
       />
       <Header />
       <main className="flex-1">

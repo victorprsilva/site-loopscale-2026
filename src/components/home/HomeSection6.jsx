@@ -1,30 +1,62 @@
-import { useState, useRef } from 'react'
-import { Play } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { FadeIn } from '../animations/FadeIn'
-import thumbImage from '../../img/thumb.webp'
 
 export default function HomeSection6() {
-  const [activeVideo, setActiveVideo] = useState(null)
-  const [currentSlide, setCurrentSlide] = useState(1)
-  const scrollContainerRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [centerVideo, setCenterVideo] = useState(0) // Índice do vídeo central
+  const [shouldAutoplay, setShouldAutoplay] = useState(false) // Controla autoplay após 2s
 
   const videos = [
-    { id: 0, youtubeId: "MLpWrANjFbI", title: "Case 1" },
-    { id: 1, youtubeId: "MLpWrANjFbI", title: "Everything aligned" },
-    { id: 2, youtubeId: "MLpWrANjFbI", title: "Case 3" }
+    { id: 0, youtubeId: "e_YcfUoHOWU", title: "Como uma Empresa Economizou 703 mil em Anúncios e Gerou 2 milhões em Faturamento." },
+    { id: 1, youtubeId: "hyX0YadB5gs", title: "De R$400 mil para R$1,5 milhão: como organizar sua operação para escalar de verdade!" },
+    { id: 2, youtubeId: "s3yBgM44LqQ", title: "VENDENDO R$ 95 MIL REAIS EM 30 DIAS EM UMA LOJA VIRTUAL" },
+    { id: 3, youtubeId: "bNqWbjdIxoc", title: "600 Mil visitas Orgânicas - Como parar de depender de tráfego pago!" }
   ]
 
-  const handlePlayVideo = (videoId) => {
-    setActiveVideo(videoId)
+  // Detectar se é mobile para renderizar apenas uma versão dos iframes
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Autoplay após 2 segundos
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldAutoplay(true)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Função para obter os vídeos visíveis (esquerda, centro, direita)
+  const getVisibleVideos = () => {
+    const total = videos.length
+    const left = (centerVideo - 1 + total) % total
+    const right = (centerVideo + 1) % total
+    return { left, center: centerVideo, right }
   }
 
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      const scrollLeft = scrollContainerRef.current.scrollLeft
-      const itemWidth = scrollContainerRef.current.offsetWidth
-      const newSlide = Math.round(scrollLeft / itemWidth)
-      setCurrentSlide(newSlide)
-    }
+  const visibleVideos = getVisibleVideos()
+
+  // Navegação
+  const goToPrevious = () => {
+    setCenterVideo((prev) => (prev - 1 + videos.length) % videos.length)
+    setShouldAutoplay(false)
+  }
+
+  const goToNext = () => {
+    setCenterVideo((prev) => (prev + 1) % videos.length)
+    setShouldAutoplay(false)
+  }
+
+  const goToVideo = (index) => {
+    setCenterVideo(index)
+    setShouldAutoplay(false)
   }
 
   return (
@@ -45,151 +77,150 @@ export default function HomeSection6() {
         </FadeIn>
 
         <FadeIn delay={0.2} className="relative mb-8 md:mb-12">
-          {/* Desktop: 3 videos side by side */}
-          <div className="hidden md:flex items-center justify-center gap-4 md:gap-6 px-4">
-            <div 
-              className="hidden md:block w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
-              onClick={() => handlePlayVideo(0)}
-            >
-              {activeVideo === 0 ? (
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videos[0].youtubeId}?autoplay=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <>
-                  <img 
-                    src={thumbImage}
-                    alt="Case anterior"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-[50px] h-[50px] rounded-full bg-gray-600/80 border-2 border-loopscale-blue flex items-center justify-center hover:bg-gray-500/80 transition-colors">
-                      <Play size={20} className="text-white ml-1" fill="white" />
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
+          {/* Desktop: Slider de vídeos com navegação */}
+          {!isMobile && (
+            <div className="hidden md:block relative px-4">
+              {/* Container principal com setas */}
+              <div className="flex items-center justify-center gap-4 md:gap-6">
+                {/* Seta esquerda */}
+                <button 
+                  onClick={goToPrevious}
+                  className="absolute left-2 lg:left-8 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all hover:scale-110"
+                  aria-label="Vídeo anterior"
+                >
+                  <ChevronLeft className="w-6 h-6 text-white" />
+                </button>
 
-            <div className="relative w-full md:w-[55%] lg:w-[60%] xl:w-[1085px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden">
-              {activeVideo === 1 ? (
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videos[1].youtubeId}?autoplay=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <>
-                  <img 
-                    src={thumbImage}
-                    alt="Everything aligned"
-                    className="w-full h-full object-cover"
+                {/* Vídeo da esquerda - clicável para centralizar */}
+                <motion.div 
+                  className="w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-50 hover:opacity-70 transition-all cursor-pointer relative group"
+                  onClick={goToPrevious}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <iframe
+                    className="w-full h-full pointer-events-none"
+                    src={`https://www.youtube.com/embed/${videos[visibleVideos.left].youtubeId}`}
+                    title={videos[visibleVideos.left].title}
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
-                  <div 
-                    className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                    onClick={() => handlePlayVideo(1)}
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+                </motion.div>
+
+                {/* Vídeo central - principal com autoplay */}
+                <AnimatePresence mode="wait">
+                  <motion.div 
+                    className="w-full md:w-[55%] lg:w-[60%] xl:w-[1085px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden shadow-2xl ring-2 ring-loopscale-blue/30"
+                    key={centerVideo}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4 }}
                   >
-                    <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full bg-gray-600/80 border-2 border-loopscale-blue flex items-center justify-center hover:bg-gray-500/80 transition-colors">
-                      <Play size={24} className="text-white ml-1" fill="white" />
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-
-            <div 
-              className="hidden md:block w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-70 cursor-pointer hover:opacity-90 transition-opacity relative"
-              onClick={() => handlePlayVideo(2)}
-            >
-              {activeVideo === 2 ? (
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${videos[2].youtubeId}?autoplay=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              ) : (
-                <>
-                  <img 
-                    src={thumbImage}
-                    alt="Próximo case"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-[50px] h-[50px] rounded-full bg-gray-600/80 border-2 border-loopscale-blue flex items-center justify-center hover:bg-gray-500/80 transition-colors">
-                      <Play size={20} className="text-white ml-1" fill="white" />
-                    </div>
-                  </div>
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* Mobile: Swipeable slider */}
-          <div 
-            ref={scrollContainerRef}
-            onScroll={handleScroll}
-            className="md:hidden flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 px-4"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            {videos.map((video, index) => (
-              <div 
-                key={index}
-                className="flex-shrink-0 w-full snap-center"
-              >
-                <div className="relative w-full h-[300px] rounded-lg overflow-hidden">
-                  {activeVideo === index ? (
                     <iframe
                       className="w-full h-full"
-                      src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`}
-                      title="YouTube video player"
+                      src={`https://www.youtube.com/embed/${videos[visibleVideos.center].youtubeId}${shouldAutoplay ? '?autoplay=1&mute=1' : ''}`}
+                      title={videos[visibleVideos.center].title}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
-                  ) : (
-                    <>
-                      <img 
-                        src={thumbImage}
-                        alt={video.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div 
-                        className="absolute inset-0 flex items-center justify-center cursor-pointer"
-                        onClick={() => handlePlayVideo(index)}
-                      >
-                        <div className="w-[60px] h-[60px] rounded-full bg-gray-600/80 border-2 border-loopscale-blue flex items-center justify-center hover:bg-gray-500/80 transition-colors">
-                          <Play size={24} className="text-white ml-1" fill="white" />
-                        </div>
-                      </div>
-                    </>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+                  </motion.div>
+                </AnimatePresence>
 
-          <div className="flex justify-center gap-2 mt-6">
-            {videos.map((video, index) => (
-              <button
-                key={index}
-                onClick={() => handlePlayVideo(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  activeVideo === index ? 'bg-loopscale-blue' : 'bg-gray-600 hover:bg-gray-500'
-                }`}
-              />
-            ))}
-          </div>
+                {/* Vídeo da direita - clicável para centralizar */}
+                <motion.div 
+                  className="w-[180px] lg:w-[280px] xl:w-[384px] h-[300px] md:h-[400px] lg:h-[500px] xl:h-[614px] rounded-lg overflow-hidden opacity-50 hover:opacity-70 transition-all cursor-pointer relative group"
+                  onClick={goToNext}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <iframe
+                    className="w-full h-full pointer-events-none"
+                    src={`https://www.youtube.com/embed/${videos[visibleVideos.right].youtubeId}`}
+                    title={videos[visibleVideos.right].title}
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+                </motion.div>
+
+                {/* Seta direita */}
+                <button 
+                  onClick={goToNext}
+                  className="absolute right-2 lg:right-8 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all hover:scale-110"
+                  aria-label="Próximo vídeo"
+                >
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </button>
+              </div>
+
+              {/* Indicadores (dots) */}
+              <div className="flex justify-center gap-3 mt-8">
+                {videos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToVideo(index)}
+                    className={`transition-all duration-300 ${
+                      centerVideo === index 
+                        ? 'w-8 h-3 bg-loopscale-blue rounded-full' 
+                        : 'w-3 h-3 bg-gray-600 hover:bg-gray-500 rounded-full'
+                    }`}
+                    aria-label={`Ir para vídeo ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              {/* Contador de vídeos */}
+              <p className="text-center text-gray-500 text-sm mt-4">
+                {centerVideo + 1} de {videos.length} cases
+              </p>
+            </div>
+          )}
+
+          {/* Mobile: Swipeable slider */}
+          {isMobile && (
+            <div className="relative">
+              <div 
+                className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 px-4"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {videos.map((video, index) => (
+                  <div 
+                    key={index}
+                    className="flex-shrink-0 w-full snap-center"
+                  >
+                    <div className="w-full h-[300px] rounded-lg overflow-hidden">
+                      <iframe
+                        className="w-full h-full"
+                        src={`https://www.youtube.com/embed/${video.youtubeId}${index === 0 && shouldAutoplay ? '?autoplay=1&mute=1' : ''}`}
+                        title={video.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Indicadores mobile */}
+              <div className="flex justify-center gap-2 mt-4">
+                {videos.map((_, index) => (
+                  <div
+                    key={index}
+                    className="w-2 h-2 bg-gray-600 rounded-full"
+                  />
+                ))}
+              </div>
+              <p className="text-center text-gray-500 text-xs mt-2">
+                Deslize para ver mais cases
+              </p>
+            </div>
+          )}
         </FadeIn>
       </div>
     </section>

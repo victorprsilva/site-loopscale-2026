@@ -24,11 +24,11 @@ export default function AnaliseAutomacao() {
           </p>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-12">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5 mb-12">
           {cards.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <motion.div 
-                className="bg-loopscale-blue p-6 md:p-8 min-h-[200px] md:min-h-[280px] flex flex-col justify-between relative"
+                className="bg-loopscale-blue p-8 md:p-10 min-h-[200px] md:min-h-[280px] flex flex-col justify-between relative"
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <div className="w-[40px] h-[40px] rounded-full bg-white/20 flex items-center justify-center">

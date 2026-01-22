@@ -33,7 +33,7 @@ export default function HomeSection2() {
   return (
     <section className="w-full bg-white py-16 md:py-20 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[201px]">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mb-16 md:mb-20">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-20 mb-16 md:mb-20">
           <FadeIn className="flex-1 max-w-[453px]">
             <h2 className="text-black text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold leading-tight tracking-[-0.84px]">
               Não somos prestadores de serviço. Somos o parceiro que entra no jogo com você.
@@ -75,7 +75,7 @@ export default function HomeSection2() {
           </p>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 mb-16 md:mb-20">
           {focusCards.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <div className={`${card.bgColor} rounded-lg p-6 h-[400px] md:h-[450px] lg:h-[465px] flex flex-col justify-between overflow-hidden relative`}>
@@ -106,7 +106,7 @@ export default function HomeSection2() {
           ))}
         </FadeInStagger>
 
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-20 mb-16 md:mb-20">
+        <div className="flex flex-col xl:flex-row gap-8 xl:gap-12 2xl:gap-20 mb-16 md:mb-20">
           <FadeIn className="flex-1 max-w-[700px]">
             <p className="text-black text-[24px] md:text-[32px] lg:text-[40px] font-inter font-bold italic leading-tight">
               Essa não é uma promessa teórica. É uma metodologia criada, testada e refinada ao longo de mais de uma década, com empresas de diferentes portes, setores e estágios de maturidade. Você não precisa de mais um fornecedor de mídia, landing page ou relatório.
@@ -138,7 +138,7 @@ export default function HomeSection2() {
 
         <FadeInStagger staggerDelay={0.15} className="mb-16 md:mb-20">
           <div className="border-t border-gray-300 pt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
               {checkpoints.map((item, index) => (
                 <FadeInStaggerItem key={index} className="flex flex-col items-center text-center">
                   <div className="w-[61px] h-[61px] rounded-full border-2 border-loopscale-blue flex items-center justify-center mb-4">

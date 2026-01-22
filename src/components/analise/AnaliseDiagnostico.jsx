@@ -27,11 +27,11 @@ export default function AnaliseDiagnostico() {
           </p>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
           {cards.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <motion.div 
-                className="bg-loopscale-blue p-6 md:p-8 min-h-[220px] md:min-h-[280px] flex items-end"
+                className="bg-loopscale-blue p-8 md:p-10 min-h-[220px] md:min-h-[280px] flex items-start"
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
                 <p className="text-white text-[14px] md:text-[16px] font-inter font-medium leading-[1.5]">

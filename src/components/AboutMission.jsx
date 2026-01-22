@@ -31,7 +31,7 @@ export default function AboutMission() {
         <div className="relative mb-12 md:mb-20 lg:mb-32">
           <div className="hidden md:block absolute top-[11px] left-[17px] right-[17px] h-[1px] bg-gray-300"></div>
           
-          <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
+          <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 md:gap-8">
             {painPoints.map((point, index) => (
               <FadeInStaggerItem key={index} className="relative">
                 <div className="w-[18px] h-[18px] md:w-[21px] md:h-[21px] bg-loopscale-blue rounded-full mb-4 md:mb-5"></div>
@@ -76,7 +76,7 @@ export default function AboutMission() {
           </div>
         </FadeIn>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-[18px]">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-[18px]">
           {services.map((service, index) => (
             <FadeInStaggerItem key={index}>
               <motion.div 

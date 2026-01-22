@@ -22,7 +22,7 @@ export default function EbooksHero() {
   return (
     <section className="w-full bg-white py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[176px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16 2xl:gap-24">
           <div className="flex-1 max-w-[400px]">
             <FadeIn delay={0.1}>
               <h1 className="text-black text-[28px] md:text-[36px] lg:text-[42px] font-inter font-bold leading-tight tracking-[-0.84px] md:tracking-[-1.26px] mb-6 md:mb-8">

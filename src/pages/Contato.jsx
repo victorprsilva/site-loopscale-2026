@@ -8,7 +8,8 @@ export default function Contato() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Contato"
-        description="Entre em contato com a Loop Scale e descubra como podemos estruturar sua operação de marketing, vendas e atendimento para escalar com previsibilidade."
+        description="Entre em contato com a Loop Scale. Agende uma conversa para entender como podemos ajudar sua empresa a crescer com processos estruturados e resultados previsíveis."
+        canonical="https://loopscale.com.br/contato"
       />
       <Header />
       <main className="flex-1">

@@ -15,7 +15,8 @@ export default function Atendimento() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Atendimento ao Cliente"
-        description="Estruture fluxos de atendimento eficientes, crie manuais de operação e treine sua equipe para entregar uma experiência excepcional ao cliente."
+        description="Estruture um atendimento que fideliza e gera resultados. Processos claros, treinamento de equipe e sistemas integrados para uma experiência excepcional ao cliente."
+        canonical="https://loopscale.com.br/atendimento"
       />
       <Header />
       <main className="flex-1">

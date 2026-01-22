@@ -17,6 +17,7 @@ export default function Home() {
       <SEO 
         title="Consultoria de Crescimento Empresarial"
         description="A Loop Scale é especialista em estruturar operações de marketing, vendas e atendimento para empresas que faturam e querem escalar com previsibilidade. Mais de 15 anos de experiência e R$250 milhões em vendas geradas."
+        canonical="https://loopscale.com.br/"
       />
       <HeaderCase />
       <main className="flex-1">

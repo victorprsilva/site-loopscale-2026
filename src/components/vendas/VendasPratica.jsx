@@ -81,7 +81,7 @@ export default function VendasPratica() {
           {cards.map((card, index) => (
             <motion.div 
               key={index}
-              className="bg-loopscale-blue p-6 md:p-8 w-[300px] md:w-[340px] h-[280px] md:h-[320px] flex items-end flex-shrink-0"
+              className="bg-loopscale-blue p-8 md:p-10 w-[300px] md:w-[340px] h-[280px] md:h-[320px] flex items-start flex-shrink-0"
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <p className="text-white text-[14px] md:text-[16px] font-inter font-medium leading-[1.5]">

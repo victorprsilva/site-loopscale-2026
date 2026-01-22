@@ -19,7 +19,7 @@ export default function AtendimentoIntegracao() {
   return (
     <section className="w-full bg-black py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[200px]">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12 md:mb-16">
+        <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-8 mb-12 md:mb-16">
           <div className="max-w-[502px]">
             <FadeIn>
               <h2 className="text-white text-[28px] md:text-[36px] lg:text-[48px] font-inter font-bold leading-tight tracking-[-0.84px] md:tracking-[-1.44px] mb-8 md:mb-10">
@@ -51,7 +51,7 @@ export default function AtendimentoIntegracao() {
           </FadeIn>
         </div>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-4 md:mb-5">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5 mb-4 md:mb-5">
           {cardsTop.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <motion.div 
@@ -67,7 +67,7 @@ export default function AtendimentoIntegracao() {
           ))}
         </FadeInStagger>
 
-        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+        <FadeInStagger staggerDelay={0.1} className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
           {cardsBottom.map((card, index) => (
             <FadeInStaggerItem key={index}>
               <motion.div 

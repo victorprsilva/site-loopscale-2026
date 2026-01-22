@@ -8,7 +8,8 @@ export default function Ebooks() {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Ebooks Gratuitos"
-        description="Baixe nossos ebooks gratuitos sobre marketing, vendas e crescimento empresarial. Conteúdo prático para estruturar sua operação comercial."
+        description="Baixe nossos ebooks gratuitos sobre marketing, vendas e crescimento empresarial. Conteúdo prático baseado em mais de 15 anos de experiência no mercado."
+        canonical="https://loopscale.com.br/ebooks"
       />
       <Header />
       <main className="flex-1">

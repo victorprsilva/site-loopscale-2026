@@ -10,7 +10,7 @@ export default function AnaliseIndicadores() {
   return (
     <section className="w-full bg-black py-12 md:py-16 lg:py-24">
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-[200px]">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-12 xl:gap-20 xl:gap-32">
+        <div className="flex flex-col xl:flex-row gap-12 xl:gap-16 2xl:gap-24">
           <div className="flex-1 max-w-[500px]">
             <FadeIn>
               <h2 className="text-white text-[28px] md:text-[36px] lg:text-[48px] font-inter font-normal leading-tight tracking-[-0.84px] md:tracking-[-1.44px] mb-8 md:mb-12">
